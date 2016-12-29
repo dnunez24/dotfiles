@@ -1,11 +1,14 @@
 [alias]
 
-	cm = commit -m
+  cm = commit -m
 	co = checkout
 	cb = checkout -b
+  graph = log --graph --oneline --decorate --date=relative --all
 	last = log -1 HEAD
-	viz = !gitup
+  ls = log --pretty=list --date=short --no-merges
+  preb = pull --rebase
 	st = status -s
+	viz = !gitup
 
 [core]
 
@@ -69,6 +72,9 @@
 
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 
+[format]
+
+  pretty = list
 
 [filter "media"]
 
@@ -105,12 +111,7 @@
 
 [pretty]
 
-  custom = "%C(magenta)%h%C(red)%d %C(yellow)%ar %C(green)%s %C(yellow)(%an)"
-  #                     │        │            │            │             └─ author name
-  #                     │        │            │            └─ message
-  #                     │        │            └─ date (relative)
-  #                     │        └─ decorations (branch, heads or tags)
-  #
+  list = "%C(yellow)%h %C(blue)%ad %C(cyan)%<(20,trunc)%an %C(white)%s%C(red)%d"
 
 [push]
 
