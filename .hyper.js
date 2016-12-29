@@ -20,10 +20,24 @@ module.exports = {
     backgroundColor: '#282828',
 
     // border color (window, tabs)
-    borderColor: '#a89984',
+    // borderColor: '',
 
     // custom css to embed in the main window
-    css: '',
+    css: `
+.tabs_list,
+.tab_tab {
+  color: #ebdbb2 !important;
+  border-color: transparent !important;
+}
+.tab_tab {
+  background-color: transparent;
+}
+.tab_active {
+  background-color: #32302f;
+}
+.tab_active {
+  border-bottom: 2px solid #8ec07c !important;
+}`,
 
     // custom css to embed in the terminal window
     termCSS: '',
