@@ -4,7 +4,7 @@ module.exports = {
     fontSize: 16,
 
     // font family with optional fallbacks
-    fontFamily: 'Fira Mono, Source Code Pro, Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
+    fontFamily: '"Fira Mono", "Source Code Pro", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     // cursorColor: 'rgb(177,98,134,0.8)',
@@ -108,7 +108,6 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
     'hyper-blink',
-    // 'hyperterm-gruvbox-dark'
   ],
 
   // in development, you can create a directory under
