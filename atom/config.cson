@@ -1,0 +1,238 @@
+"*":
+  _dartlang:
+    _errorsInitialized: true
+    _errorsInitialized2: true
+    _firstRun: true
+    _initialized: true
+    _initializedSymLinks: true
+    _version: "0.6.0"
+  "atom-autocomplete-php":
+    autoloadPaths: [
+      "vendor/autoload.php"
+      "autoload.php"
+      "app/autoload.php"
+    ]
+    binPhp: "/usr/local/bin/php"
+  "atom-beautify":
+    general:
+      _analyticsUserId: "af5372d2-e4a0-4029-a597-e7b439652cbc"
+  "atom-material-ui":
+    altCmdPalette: true
+    depth: true
+  "atom-typescript": {}
+  "auto-copyright":
+    owner: "David Nuñez"
+    template: "Copyright (c) %y %o. All Rights Reserved."
+  "autocomplete-elixir":
+    elixirPath: "/usr/local/bin"
+    erlangHome: "/usr/local/bin"
+  "autocomplete-plus":
+    autoActivationDelay: 500
+    confirmCompletion: "tab and enter"
+    navigateCompletions: "ctrl-p,ctrl-n"
+  "autocomplete-python":
+    useKite: false
+  autosave:
+    enabled: true
+  core:
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".flowconfig"
+      ]
+      "source.json": [
+        ".arcconfig"
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
+    disabledPackages: [
+      "atom-html-preview"
+      "terminal"
+      "autocomplete-erlang"
+      "terminal-plus"
+      "tool-bar-main"
+      "nuclide"
+      "git-diff-details"
+      "linter-foodcritic"
+      "linter-php"
+      "linter-twig"
+      "linter-erb"
+      "linter-rubocop"
+      "linter-sass-lint"
+      "linter-haml"
+      "language-babel"
+      "autocomplete-go"
+      "whitespace"
+      "autocomplete-ctags"
+    ]
+    telemetryConsent: "limited"
+    themes: [
+      "nucleus-dark-ui"
+      "gruvbox"
+    ]
+    useCustomTitleBar: true
+  dartlang:
+    sdkLocation: "/usr/local/opt/dart/libexec"
+    showOutlineView: false
+  editor:
+    fontFamily: "Source Code Pro"
+    invisibles: {}
+    showIndentGuide: true
+  emmet:
+    useEmmetComments: false
+  erlangHome: "/usr/local/bin"
+  "exception-reporting":
+    userId: "0e7912b8-29ee-7f56-32d7-0e2753f84b14"
+  "file-watcher":
+    promptWhenFileHasChangedOnDisk: false
+  "git-diff": {}
+  linter:
+    displayLinterInfo: false
+    showErrorPanel: false
+    showErrorTabFile: false
+    showErrorTabProject: false
+    statusIconScope: "File"
+  "linter-erlc":
+    erlcExecutablePath: "/usr/local/bin/erlc"
+  "linter-eslint":
+    disableWhenNoEslintrcFileInPath: true
+  "linter-foodcritic":
+    executablePath: "/usr/local/bin/foodcritic"
+    foodcriticExecutablePath: "/usr/local/bin/foodcritic"
+  "linter-htmlhint": {}
+  "linter-javac":
+    javaExecutablePath: "/usr/bin/javac"
+  "linter-php":
+    executablePath: "/usr/local/bin/php"
+    phpExecutablePath: "/usr/local/bin/php"
+  "linter-phpcs":
+    disableWhenNoConfigFile: true
+  "linter-phpmd": {}
+  "linter-rubocop":
+    command: "/Users/dnunez/.rbenv/shims/rubocop"
+  "linter-ruby":
+    rubyExecutablePath: "/Users/dnunez/.rbenv/shims/ruby"
+  "linter-sass-lint":
+    configFile: "~/.sass-lint.yml"
+  "linter-scalac":
+    scalacExecutablePath: "/usr/local/bin/scalac"
+  "linter-scss-lint":
+    executablePath: "/Users/dnunez/.rbenv/shims/scss-lint"
+  "linter-tidy":
+    grammarScopes: [
+      "text.html.basic"
+      "text.html.handlebars"
+    ]
+  "linter-twig": {}
+  "livestyle-atom":
+    analyzer:
+      notify: false
+      notifyCampaign: false
+  "markdown-preview":
+    breakOnSingleNewline: true
+    useGitHubStyle: true
+  metrics:
+    userId: "b5c0345a84c76bbecb3ce6f0e553529fe718a8e2"
+  minimap:
+    displayMinimapOnLeft: true
+    plugins:
+      linter: true
+      linterDecorationsZIndex: 0
+  "notational-velocity":
+    directory: "/Users/dnunez/Dropbox/Notes"
+  nuclide:
+    installRecommendedPackages: true
+    "nuclide-arcanist": {}
+    "nuclide-debugger-hhvm":
+      phpRuntimePath: "/usr/local/bin/php"
+    "nuclide-diagnostics-store": {}
+    "nuclide-distraction-free-mode": {}
+    "nuclide-file-tree":
+      revealFileOnSwitch: true
+    "nuclide-home":
+      showHome: false
+  "one-dark-ui": {}
+  "one-light-ui": {}
+  "release-notes":
+    viewedVersion: "0.95.0"
+  "spell-check": {}
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    syncHorizontalScroll: true
+  "syntax-settings":
+    source:
+      php:
+        editorSettings:
+          tabLength: 4
+  "terminal-plus":
+    core:
+      shell: "/usr/local/bin/fish"
+    style:
+      fontFamily: "Source Code Pro"
+      fontSize: "14"
+  "toggle-quotes": {}
+  "tool-bar":
+    position: "Left"
+  "tree-view":
+    hideVcsIgnoredFiles: true
+    showOnRightSide: true
+  "vim-mode": {}
+  "web-browser": {}
+  welcome:
+    showOnStartup: false
+".coffee.source":
+  editor:
+    autoIndentOnPaste: true
+    normalizeIndentOnPaste: "true"
+".gfm.source":
+  editor:
+    softWrap: false
+    softWrapAtPreferredLineLength: false
+".hack.html.text":
+  editor:
+    tabLength: 4
+".hackfragment.source":
+  editor:
+    tabLength: 4
+".html.php.text":
+  editor:
+    preferredLineLength: 120
+    tabLength: 4
+".nginx.source":
+  editor:
+    tabLength: 4
+".text.twig.xml":
+  editor:
+    normalizeIndentOnPaste: "true"
+    tabLength: 4
+".text.xml":
+  editor:
+    normalizeIndentOnPaste: "true"
+    tabLength: 4
+".text.xml.xsl":
+  editor:
+    normalizeIndentOnPaste: "true"
+    tabLength: 4
+_dartlang:
+  _errorsInitialized: true
+  _errorsInitialized2: true
+  _initialized: true
+  _initializedSymLinks: true
+  _version: "0.4.15"
+"autocomplete-erlang":
+  elixirPath: "/usr/local/bin/erl"
+dartlang:
+  formatOnSave: true
+  sdkLocation: "/usr/local/opt/dart/libexec"
+rspec:
+  command: "/Users/dnunez/.rbenv/shims/bundle exec rspec"
+"ruby-test":
+  rspecAllCommand: "~/.rbenv/shims/bundle exec rspec --color"
+  rspecFileCommand: "~/.rbenv/shims/bundle exec rspec --color {relative_path}"
+  rspecSingleCommand: "~/.rbenv/shims/bundle exec rspec --color {relative_path}:{line_number}"
+  specFramework: "rspec"

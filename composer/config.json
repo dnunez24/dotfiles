@@ -1,0 +1,10 @@
+{
+    "config": {
+    },
+    "repositories": {
+        "magento": {
+            "type": "composer",
+            "url": "https://repo.magento.com"
+        }
+    }
+}
