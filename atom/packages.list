@@ -6,7 +6,6 @@ auto-copyright
 autocomplete-ctags
 autocomplete-emojis
 autocomplete-erlang
-autocomplete-go
 autocomplete-modules
 autocomplete-paths
 autocomplete-php
@@ -29,8 +28,6 @@ language-babel
 language-bats
 language-chef
 language-chuck
-language-clojure
-language-csharp
 language-docker
 language-elixir
 language-elm
