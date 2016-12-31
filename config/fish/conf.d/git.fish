@@ -27,9 +27,9 @@ set __fish_git_prompt_color_cleanstate brgreen --bold
 set __fish_git_prompt_color_dirtystate yellow --bold
 set __fish_git_prompt_color_flags white
 set __fish_git_prompt_color_merging yellow --bold
-set __fish_git_prompt_color_prefix brwhite
+set __fish_git_prompt_color_prefix white
 set __fish_git_prompt_color_stagedstate green --bold
 set __fish_git_prompt_color_stashstate cyan --bold
-set __fish_git_prompt_color_suffix brwhite
+set __fish_git_prompt_color_suffix white
 set __fish_git_prompt_color_untrackedfiles cyan --bold
 set __fish_git_prompt_color_upstream magenta --bold
