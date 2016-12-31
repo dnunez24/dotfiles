@@ -21,7 +21,7 @@ set fish_color_param blue
 set fish_color_quote white
 set fish_color_redirection yellow
 set fish_color_search_match cyan --underline
-set fish_color_status red
+set fish_color_status --background red white --bold
 set fish_color_user cyan
 set fish_color_valid_path green --underline
 
