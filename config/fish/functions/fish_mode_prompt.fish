@@ -5,16 +5,16 @@ function fish_mode_prompt --description "Displays the current mode"
     switch $fish_bind_mode
       case default
         set_color --bold --background red brwhite
-        echo ' N '
+        echo ' CMD '
       case insert
         set_color --bold --background green brwhite
-        echo ' I '
+        echo ' INS '
       case replace-one
         set_color --bold --background green brwhite
-        echo ' R '
+        echo ' REP '
       case visual
         set_color --bold --background magenta brwhite
-        echo ' V '
+        echo ' VIS '
     end
     set_color normal
     echo -n ' '
