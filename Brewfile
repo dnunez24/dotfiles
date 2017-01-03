@@ -31,6 +31,7 @@ brew 'php-code-sniffer'
 brew 'phpmd'
 brew 'shellcheck'
 brew 'terraform'
+brew 'tmux'
 brew 'vim', args: ['--with-override-system-vi']
 
 # Install packages from casks
