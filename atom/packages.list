@@ -24,7 +24,6 @@ gruvbox
 haskell-grammar
 highlight-selected
 language-apache
-language-babel
 language-bats
 language-chef
 language-chuck
@@ -86,7 +85,6 @@ nucleus-dark-ui
 open-in-browser
 php-twig
 pigments
-react
 sort-lines
 toggle-quotes
 vim-mode
