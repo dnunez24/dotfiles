@@ -97,6 +97,10 @@
 
   path = ~/.gitconfig.local
 
+[init]
+
+  templateDir = ~/.config/git/templates
+
 [merge]
 
 	tool = Kaleidoscope
