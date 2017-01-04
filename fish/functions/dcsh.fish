@@ -1,3 +1,3 @@
 function dcsh
-  docker-compose exec $@ /bin/sh
+  docker-compose exec $argv /bin/sh
 end
