@@ -18,4 +18,8 @@ set fish_key_bindings fish_vi_key_bindings
 set -U fish_prompt_pwd_dir_length 1
 
 # Set custom bin directories in PATH
-set fish_user_paths "/usr/local/sbin" "/Applications/LilyPond.app/Contents/Resources/bin"
+set fish_user_paths "/usr/local/sbin"
+
+if test -e "/Applications/LilyPond.app"
+  set fish_user_paths $fish_user_paths "/Applications/LilyPond.app/Contents/Resources/bin"
+end
