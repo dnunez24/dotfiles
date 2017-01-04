@@ -15,8 +15,7 @@
     ~/.dotfiles: ''
     ~/.gitconfig:
     ~/.hyper.js:
-      force: true
-    ~/.ssh/:
+    ~/.ssh/config:
     ~/.tmux.conf:
 
 - shell:
