@@ -1,18 +1,21 @@
 - defaults:
     link:
       create: true
-      force: true
+      # force: true
       relink: true
 
 - clean:
   - '~'
+  - ~/.config
 
 - link:
     ~/.atom:
-    ~/.config/fish: config/fish
+    ~/.config/fish:
+    ~/.config/git:
     ~/.dotfiles: ''
     ~/.gitconfig:
-    ~/.gitignore:
+    ~/.hyper.js:
+      force: true
     # ~/.ssh/config:
     ~/.tmux.conf:
 
@@ -22,3 +25,4 @@
   # - [brew bundle, Install Homebrew packages]
   # - [apm install --packages-file=atom/packages.list --compatible --production, Installing Atom packages]
   # - [apm clean, Remove unspecifed Atom packages]
+  # - [fish_update_completions, Update fish autocompletions]
