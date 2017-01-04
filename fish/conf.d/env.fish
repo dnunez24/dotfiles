@@ -1,5 +1,5 @@
 # Set environment variables
-set -x EDITOR atom -w
+set -x EDITOR "atom -w"
 set -x SHELL /usr/bin/fish
 
 # Fixes for Ruby JSON parser throwing errors from Chef gems
