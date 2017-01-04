@@ -16,7 +16,7 @@
     ~/.gitconfig:
     ~/.hyper.js:
       force: true
-    # ~/.ssh/config:
+    ~/.ssh/:
     ~/.tmux.conf:
 
 - shell:
