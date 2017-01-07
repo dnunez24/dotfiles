@@ -14,6 +14,7 @@
     ~/.config/git:
     ~/.dotfiles: ''
     ~/.gitconfig:
+    ~/.bin/git-open: git-open/git-open
     ~/.hyper.js:
     ~/.ssh/config: ssh/config
     ~/.tmux.conf:
