@@ -6,6 +6,7 @@
   graph = log --graph --oneline --decorate --date=relative --all
 	last = log -1 HEAD
   ls = log --pretty=list --date=short --no-merges
+  patch = --no-pager diff --no-color
   preb = pull --rebase
 	st = status -s
 	viz = !gitup
@@ -15,6 +16,8 @@
 	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.config/git/ignore
 	attributesfile = ~/.config/git/attributes
+
+	pager = diff-highlight | diff-so-fancy | less -r
 
 	# Treat spaces before tabs and all kinds of trailing whitespace as an error
 	# [default] trailing-space: looks for spaces at the end of a line
@@ -44,9 +47,18 @@
 [color "diff"]
 
 	meta = yellow bold
+  commit = green bold
 	frag = magenta bold # line info
-	old = red # deletions
-	new = green # additions
+	old = red bold # deletions
+	new = green bold # additions
+  whitespace = red reverse
+
+[color "diff-highlight"]
+
+  oldNormal = red bold
+  oldHighlight = "red bold 52"
+  newNormal = green bold
+  newHighlight = "green bold 22"
 
 [color "status"]
 
