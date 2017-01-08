@@ -3,15 +3,15 @@
   cm = commit -m
   co = checkout
   cb = checkout -b
+  dt = difftool
   graph = log --graph --oneline --decorate --date=relative --all
   last = log -1 HEAD
   ls = log --pretty=list --date=short --no-merges
+  mt = mergetool
   patch = --no-pager diff --no-color
   preb = pull --rebase
   st = status -s
   viz = !gitup
-  mt = mergetool
-  dt = difftool
 
 [core]
 
