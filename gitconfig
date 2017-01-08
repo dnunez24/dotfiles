@@ -9,6 +9,8 @@
   preb = pull --rebase
 	st = status -s
 	viz = !gitup
+	mt = mergetool
+  dt = difftool
 
 [core]
 
