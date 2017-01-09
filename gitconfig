@@ -15,6 +15,8 @@
 
 [core]
 
+  editor = atom --wait
+
   # Use custom `.gitignore` and `.gitattributes`
   excludesfile = ~/.config/git/ignore
   attributesfile = ~/.config/git/attributes
