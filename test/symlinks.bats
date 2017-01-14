@@ -2,7 +2,7 @@
 
 load test_helper
 
-@test "symlinks dotfiles to $HOME/.dotfiles" {
+@test "Symlinks dotfiles to $HOME/.dotfiles" {
   expected="$(dirname "$BATS_TEST_DIRNAME")/"
   actual="$(readlink "$HOME/.dotfiles")"
   assert_equal $expected $actual
