@@ -1,0 +1,7 @@
+os:
+  - linux
+  - osx
+osx_image: xcode8.2
+language: bash
+install: test/install-dependencies.sh
+script: bats test
