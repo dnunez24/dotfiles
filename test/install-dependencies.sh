@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -ex
 
 case "$(uname)" in
   Darwin )
@@ -8,8 +8,8 @@ case "$(uname)" in
     brew install bats
     ;;
   * )
-    sudo git clone https://github.com/sstephenson/bats.git /usr/local/src/bats
-    cd /usr/local/src/bats
-    ./install.sh /usr/local
+    wget https://github.com/sstephenson/bats/archive/v0.4.0.tar.gz -O /tmp/bats.tar.gz
+    tar -xvf /tmp/bats.tar.gz
+    export PATH=$PATH:$PWD/bats-0.4.0/bin/
     ;;
 esac
