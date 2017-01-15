@@ -2,6 +2,8 @@
 
 set -ex
 
+echo "Installing dependencies for $TRAVIS_OS_NAME"
+
 case "$TRAVIS_OS_NAME" in
   osx )
     brew update

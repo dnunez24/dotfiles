@@ -3,5 +3,6 @@ os:
   - osx
 osx_image: xcode8.2
 language: bash
-install: test/install-dependencies.sh
+before_install: test/install-dependencies.sh
+install: ./install
 script: bats test
