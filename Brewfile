@@ -33,6 +33,7 @@ brew 'php-code-sniffer'
 brew 'php-cs-fixer'
 brew 'phpmd'
 brew 'shellcheck'
+brew 'terminal-notifier'
 brew 'terraform'
 brew 'tmux'
 brew 'vim', args: ['--with-override-system-vi']
