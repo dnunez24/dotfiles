@@ -3,6 +3,8 @@ os:
   - osx
 osx_image: xcode8.2
 language: bash
+env:
+  - PATH=$PATH:$TRAVIS_BUILD_DIR/bats-0.4.0/bin
 before_install: test/install-dependencies.sh
 install: ./install
 script: bats test
