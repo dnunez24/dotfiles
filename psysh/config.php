@@ -7,7 +7,7 @@ return array(
     //
     // If you are running PHP 5.3, or if you want to use a different pager only
     // for Psy shell sessions, you can override it here.
-    'pager' => 'more',
+    // 'pager' => 'more',
 
     // Sets the maximum number of entries the history can contain.
     // If set to zero, the history size is unlimited.
@@ -49,8 +49,9 @@ return array(
     // session. This is a good place to add autoloaders for your favorite
     // libraries.
     'defaultIncludes' => array(
-        './vendor/autoload.php',
-        './app/bootstrap.php',
+        getcwd() . '/magento/app/bootstrap.php',
+        getcwd() . '/app/bootstrap.php',
+        getcwd() . '/vendor/autoload.php',
     ),
 
     // While PsySH ships with a bunch of great commands, it's possible to add
