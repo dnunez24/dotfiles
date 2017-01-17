@@ -14,9 +14,12 @@
     ~/.config/git:
     ~/.dotfiles: ''
     ~/.gitconfig:
+      force: true
     ~/.bin/git-open: git-open/git-open
     ~/.hyper.js:
-    ~/.ssh/config: ssh/config
+    ~/.ssh/config:
+      path: ssh/config
+      force: true
     ~/.tmux.conf:
 
 - shell:
