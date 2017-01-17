@@ -12,6 +12,8 @@
     ~/.atom:
     ~/.config/fish:
     ~/.config/git:
+    ~/.config/psysh:
+      force: true
     ~/.dotfiles: ''
     ~/.gitconfig:
       force: true
