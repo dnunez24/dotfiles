@@ -71,10 +71,9 @@ linter-phpcs
 linter-phpmd
 linter-rubocop
 linter-ruby
-linter-sass-lint
 linter-scalac
-linter-scss-lint
 linter-shellcheck
+linter-stylelint
 linter-tidy
 linter-twig
 linter-xmllint
