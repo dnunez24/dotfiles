@@ -1,3 +1,3 @@
 function la
-  ls -Alp $argv
+  ls -Alph $argv
 end
