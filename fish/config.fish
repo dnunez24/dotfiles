@@ -21,7 +21,7 @@ if status --is-interactive
 end
 
 # Set custom bin directories in PATH
-set fish_user_paths "$HOME/.bin" "./vendor/bin" "./node_modules/.bin" "/usr/local/sbin"
+set fish_user_paths "$HOME/.bin" "./vendor/bin" "./node_modules/.bin" "/usr/local/sbin" "$HOME/.composer/vendor/bin" "$HOME/.platformsh/bin/"
 
 if test -e "/Applications/LilyPond.app"
   set fish_user_paths $fish_user_paths "/Applications/LilyPond.app/Contents/Resources/bin"
