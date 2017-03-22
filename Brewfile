@@ -11,6 +11,7 @@ tap 'homebrew/dupes'
 tap 'homebrew/php'
 tap 'homebrew/tex'
 tap 'homebrew/versions'
+tap 'shopify/shopify'
 
 # Install packages from Homebrew core
 brew 'awscli'
@@ -42,6 +43,7 @@ brew 'shellcheck'
 brew 'terminal-notifier'
 brew 'terraform'
 brew 'tmux'
+brew 'themekit'
 brew 'vim', args: ['--with-override-system-vi']
 
 # Install packages from casks
