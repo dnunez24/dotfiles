@@ -21,11 +21,7 @@ if status --is-interactive
 end
 
 # Set custom bin directories in PATH
-set fish_user_paths "$HOME/.bin" "./vendor/bin" "./node_modules/.bin" "/usr/local/sbin" "$HOME/.composer/vendor/bin" "$HOME/.platformsh/bin/" "$HOME/.magento-cloud/bin/"
-
-if test -e "$HOME/.magento-cloud/shell-config.rc"
-  . '$HOME/.magento-cloud/shell-config.rc' 2>/dev/null
-end
+set fish_user_paths "$HOME/.bin" "./vendor/bin" "./node_modules/.bin" "/usr/local/sbin" "$HOME/.composer/vendor/bin" "$HOME/.platformsh/bin/" "$HOME/.magento-cloud/bin/" "$HOME/.cargo/bin"
 
 if test -e "/Applications/LilyPond.app"
   set fish_user_paths $fish_user_paths "/Applications/LilyPond.app/Contents/Resources/bin"
