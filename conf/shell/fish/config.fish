@@ -27,22 +27,21 @@ set fish_user_paths $fish_user_paths "./node_modules/.bin"
 set fish_user_paths $fish_user_paths "/usr/local/sbin"
 set fish_user_paths $fish_user_paths "$HOME/.composer/vendor/bin"
 set fish_user_paths $fish_user_paths "$HOME/.platformsh/bin/"
-set fish_user_paths $fish_user_paths "$HOME/.magento-cloud/bin/"
 set fish_user_paths $fish_user_paths "$HOME/.cargo/bin"
 
 if test -e "/Applications/LilyPond.app"
   set fish_user_paths $fish_user_paths "/Applications/LilyPond.app/Contents/Resources/bin"
 end
 
-eval (gpg-agent --daemon)
-set -x GPG_TTY (tty)
-
-[ -f ~/.gpg-agent-info ]; and source ~/.gpg-agent-info
-
-if [ -S "$GPG_AGENT_INFO%%" ]
-    set -x GPG_AGENT_INFO
-    set -x SSH_AUTH_SOCK
-    set -x SSH_AGENT_PID
-else
-    eval (gpg-agent --daemon ~/.gpg-agent-info)
-end
+# eval (gpg-agent --daemon)
+# set -x GPG_TTY (tty)
+# 
+# [ -f ~/.gpg-agent-info ]; and source ~/.gpg-agent-info
+# 
+# if [ -S "$GPG_AGENT_INFO%%" ]
+#     set -x GPG_AGENT_INFO
+#     set -x SSH_AUTH_SOCK
+#     set -x SSH_AGENT_PID
+# else
+#     eval (gpg-agent --daemon ~/.gpg-agent-info)
+# end
