@@ -73,6 +73,10 @@
   changed = green
   untracked = cyan
 
+[commit]
+  
+  gpgsign = true
+
 [credential]
 
   helper = osxkeychain
@@ -144,4 +148,5 @@
   
 [user]
 	name = Dave Nunez
-	email = dnunez24@gmail.com
+	email = david.nunez@alumni.stanford.edu
+  signingkey = 80752B7C02AB4ED0
