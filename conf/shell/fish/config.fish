@@ -22,6 +22,7 @@ end
 
 # Set custom bin directories in PATH
 set fish_user_paths "$HOME/.bin"
+set fish_user_paths $fish_user_paths "(brew --prefix homebrew/php/php71)/bin"
 set fish_user_paths $fish_user_paths "./vendor/bin"
 set fish_user_paths $fish_user_paths "./node_modules/.bin"
 set fish_user_paths $fish_user_paths "/usr/local/sbin"
@@ -33,9 +34,15 @@ if test -e "/Applications/LilyPond.app"
   set fish_user_paths $fish_user_paths "/Applications/LilyPond.app/Contents/Resources/bin"
 end
 
-# eval (gpg-agent --daemon)
-# set -x GPG_TTY (tty)
-# 
+# eval (gpg-agent --daemon --enable-ssh-support)
+# Configure GPG agent
+set -x GPG_TTY (tty)
+set -e SSH_AGENT_PID
+
+if "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne %self
+ set -x SSH_AUTH_SOCK="(gpgconf --list-dirs agent-ssh-socket)"
+end
+  
 # [ -f ~/.gpg-agent-info ]; and source ~/.gpg-agent-info
 # 
 # if [ -S "$GPG_AGENT_INFO%%" ]
