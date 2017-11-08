@@ -8,19 +8,16 @@ indent_size = 2
 end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
+max_line_length = 80
 
-[*.{json,html,php,py,xml}]
+# PSR-2: http://www.php-fig.org/psr/psr-2/
+[*.php]
 indent_size = 4
 
-[package.json]
-indent_size = 2
-
-[*.{bash,sh}]
+# PEP 8: https://www.python.org/dev/peps/pep-0008
+[*.py]
 indent_size = 4
 max_line_length = 79
 
 [*.md]
 trim_trailing_whitespace = false
-
-[Makefile]
-indent_style = tab
