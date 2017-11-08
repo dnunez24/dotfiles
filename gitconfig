@@ -15,6 +15,7 @@
 
 [core]
 
+  autocrlf = input 
   editor = atom --wait
 
   # Use custom `.gitignore` and `.gitattributes`
@@ -22,8 +23,6 @@
   attributesfile = ~/.config/git/attributes
 
   pager = diff-so-fancy | less --tabs=4 -RFX
-	excludesfile = ~/.config/git/ignore
-	attributesfile = ~/.config/git/attributes
 
   # Treat spaces before tabs and all kinds of trailing whitespace as an error
   # [default] trailing-space: looks for spaces at the end of a line
@@ -71,6 +70,10 @@
   added = yellow
   changed = green
   untracked = cyan
+
+[commit]
+  
+  gpgsign = true
 
 [credential]
 
@@ -124,6 +127,7 @@
   tool = Kaleidoscope
 
 [mergetool]
+
   prompt = false
 
 [mergetool "Kaleidoscope"]
@@ -140,3 +144,8 @@
   default = simple
   # Make `git push` push relevant annotated tags when pushing branches out.
   followTags = true
+  
+[user]
+  name = Dave Nunez
+  email = david.nunez@alumni.stanford.edu
+  signingkey = 80752B7C02AB4ED0
