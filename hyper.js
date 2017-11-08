@@ -6,6 +6,8 @@ module.exports = {
     // font family with optional fallbacks
     fontFamily: '"Fira Mono", "Source Code Pro", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
 
+    cursorBlink: true,
+
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     // cursorColor: 'rgb(177,98,134,0.8)',
     cursorColor: 'rgb(146,131,116,0.8)',
@@ -21,6 +23,11 @@ module.exports = {
 
     // border color (window, tabs)
     // borderColor: '',
+    
+    modifierKeys: {
+      cmdIsMeta: false,
+      altIsMeta: true,
+    },
 
     // custom css to embed in the main window
     css: `
@@ -107,7 +114,8 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-    'hyper-blink',
+    'hypercwd',
+    'hyper-statusline',
   ],
 
   // in development, you can create a directory under
