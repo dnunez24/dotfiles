@@ -1,10 +1,15 @@
 {
-    "config": {
-    },
-    "repositories": {
-        "magento": {
-            "type": "composer",
-            "url": "https://repo.magento.com"
-        }
+  "config": {
+    "optiize-autoloader": true,
+    "preferred-install": "dist",
+    "secure-http": true,
+    "sort-packages": true,
+    "store-auths": true
+  },
+  "repositories": {
+    "magento": {
+      "type": "composer",
+      "url": "https://repo.magento.com"
     }
+  }
 }
