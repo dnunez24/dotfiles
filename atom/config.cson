@@ -16,9 +16,22 @@
   "atom-beautify":
     general:
       _analyticsUserId: "af5372d2-e4a0-4029-a597-e7b439652cbc"
+    js:
+      beautify_on_save: true
+    json:
+      beautify_on_save: true
+    scss:
+      beautify_on_save: true
+  "atom-ide-ui":
+    "atom-ide-diagnostics-ui": {}
   "atom-material-ui":
     altCmdPalette: true
     depth: true
+  "atom-oss-license":
+    copyright: false
+    name: "David Nuñez"
+  "atom-package-deps":
+    ignored: []
   "atom-typescript": {}
   "auto-copyright":
     owner: "David Nuñez"
@@ -27,7 +40,7 @@
     elixirPath: "/usr/local/bin"
     erlangHome: "/usr/local/bin"
   "autocomplete-plus":
-    autoActivationDelay: 500
+    autoActivationDelay: 100
     confirmCompletion: "tab and enter"
     navigateCompletions: "ctrl-p,ctrl-n"
   "autocomplete-python":
@@ -50,32 +63,34 @@
     disabledPackages: [
       "atom-html-preview"
       "terminal"
-      "autocomplete-erlang"
-      "terminal-plus"
       "tool-bar-main"
       "nuclide"
       "git-diff-details"
       "linter-foodcritic"
       "linter-php"
-      "linter-twig"
       "linter-erb"
       "linter-rubocop"
-      "linter-sass-lint"
       "linter-haml"
-      "language-babel"
-      "autocomplete-go"
+      "linter-jshint"
+      "atom-typescript"
       "whitespace"
-      "autocomplete-ctags"
+      "linter"
+      "linter-ui-default"
+      "minimap-linter"
+      "ide-flowtype"
+      "flow-ide"
     ]
     telemetryConsent: "limited"
     themes: [
       "nucleus-dark-ui"
       "gruvbox"
     ]
-    useCustomTitleBar: true
+    titleBar: "hidden"
   dartlang:
     sdkLocation: "/usr/local/opt/dart/libexec"
     showOutlineView: false
+  drupal:
+    fileTypesPhp: "module,install,inc,test,profile"
   editor:
     fontFamily: "Source Code Pro"
     invisibles: {}
@@ -87,17 +102,28 @@
     userId: "0e7912b8-29ee-7f56-32d7-0e2753f84b14"
   "file-watcher":
     promptWhenFileHasChangedOnDisk: false
-  "git-diff": {}
-  linter:
-    displayLinterInfo: false
-    showErrorPanel: false
-    showErrorTabFile: false
-    showErrorTabProject: false
-    statusIconScope: "File"
+  "flow-ide":
+    showUncovered: true
+  "git-diff":
+    showIconsInEditorGutter: true
+  "git-plus":
+    general:
+      _analyticsUserId: "82c2517f-fe34-4a33-ac1d-41928c7dfdfb"
+  "go-plus":
+    panel:
+      currentHeight: "34.48967889908257vh"
+  "ide-flowtype":
+    tryFlowBin: true
+  "ide-php": {}
+  "language-babel":
+    autoIndentJSX: true
+  linter: {}
   "linter-erlc":
     erlcExecutablePath: "/usr/local/bin/erlc"
   "linter-eslint":
     disableWhenNoEslintrcFileInPath: true
+  "linter-flow":
+    executablePath: "node_modules/.bin/flow"
   "linter-foodcritic":
     executablePath: "/usr/local/bin/foodcritic"
     foodcriticExecutablePath: "/usr/local/bin/foodcritic"
@@ -112,20 +138,25 @@
   "linter-phpmd": {}
   "linter-rubocop":
     command: "/Users/dnunez/.rbenv/shims/rubocop"
-  "linter-ruby":
-    rubyExecutablePath: "/Users/dnunez/.rbenv/shims/ruby"
+  "linter-ruby": {}
   "linter-sass-lint":
     configFile: "~/.sass-lint.yml"
   "linter-scalac":
     scalacExecutablePath: "/usr/local/bin/scalac"
   "linter-scss-lint":
     executablePath: "/Users/dnunez/.rbenv/shims/scss-lint"
+  "linter-shellcheck":
+    enableNotice: true
   "linter-tidy":
     grammarScopes: [
       "text.html.basic"
       "text.html.handlebars"
     ]
   "linter-twig": {}
+  "linter-ui-default":
+    panelHeight: 60
+    showProviderName: true
+    tooltipFollows: "Keyboard"
   "livestyle-atom":
     analyzer:
       notify: false
@@ -136,6 +167,7 @@
   metrics:
     userId: "b5c0345a84c76bbecb3ce6f0e553529fe718a8e2"
   minimap:
+    autoToggle: false
     displayMinimapOnLeft: true
     plugins:
       linter: true
@@ -155,6 +187,14 @@
       showHome: false
   "one-dark-ui": {}
   "one-light-ui": {}
+  "php-debug":
+    GutterPosition: "Left"
+    PathMaps: [
+      "/var/www/html;/Users/dnunez/GitHub/test-craftcms"
+    ]
+    currentPanelMode: "bottom"
+  "php-integrator-base":
+    phpCommand: "/usr/local/bin/php"
   "release-notes":
     viewedVersion: "0.95.0"
   "spell-check": {}
@@ -169,6 +209,9 @@
       php:
         editorSettings:
           tabLength: 4
+  tabs:
+    alwaysShowTabBar: false
+    enableVcsColoring: true
   "terminal-plus":
     core:
       shell: "/usr/local/bin/fish"
@@ -179,9 +222,14 @@
   "tool-bar":
     position: "Left"
   "tree-view":
+    alwaysOpenExisting: true
+    focusOnReveal: false
+    hideIgnoredNames: true
     hideVcsIgnoredFiles: true
-    showOnRightSide: true
+    showOnRightSide: false
   "vim-mode": {}
+  "vim-mode-plus":
+    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
   "web-browser": {}
   welcome:
     showOnStartup: false
@@ -189,10 +237,14 @@
   editor:
     autoIndentOnPaste: true
     normalizeIndentOnPaste: "true"
+".editorconfig.source":
+  editor:
+    softWrap: true
+    softWrapAtPreferredLineLength: true
 ".gfm.source":
   editor:
-    softWrap: false
-    softWrapAtPreferredLineLength: false
+    softWrap: true
+    softWrapAtPreferredLineLength: true
 ".hack.html.text":
   editor:
     tabLength: 4
