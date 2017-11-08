@@ -1,6 +1,7 @@
 @bigcommerce/stencil-cli
 @shopify/slate
 create-react-app
+hpm-cli
 serverless
 vue-cli
 yo
