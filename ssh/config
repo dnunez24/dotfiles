@@ -6,7 +6,6 @@ Host *
     PreferredAuthentications publickey,password
     PubkeyAuthentication yes
     Protocol 2,1
-    RSAAuthentication yes
     ServerAliveCountMax 5
     ServerAliveInterval 60
     StrictHostKeyChecking ask
