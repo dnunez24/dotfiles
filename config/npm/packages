@@ -1,6 +1,7 @@
 @bigcommerce/stencil-cli
 @shopify/slate
 create-react-app
+flow-typed
 gatsby-cli
 hpm-cli
 npm
