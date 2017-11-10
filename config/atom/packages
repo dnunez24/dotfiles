@@ -62,7 +62,6 @@ linter-golinter
 linter-haml
 linter-htmlhint
 linter-javac
-linter-jshint
 linter-lintr
 linter-pep8
 linter-php
@@ -83,6 +82,7 @@ nucleus-dark-ui
 open-in-browser
 php-twig
 pigments
+prettier-atom
 sort-lines
 toggle-quotes
 vim-mode
