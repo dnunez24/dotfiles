@@ -18,6 +18,8 @@
       _analyticsUserId: "af5372d2-e4a0-4029-a597-e7b439652cbc"
     js:
       beautify_on_save: true
+      default_beautifier: "ESLint Fixer"
+      disabled: true
     json:
       beautify_on_save: true
     scss:
@@ -71,14 +73,11 @@
       "linter-erb"
       "linter-rubocop"
       "linter-haml"
-      "linter-jshint"
-      "atom-typescript"
       "whitespace"
       "linter"
       "linter-ui-default"
       "minimap-linter"
-      "ide-flowtype"
-      "flow-ide"
+      "prettier-atom"
     ]
     telemetryConsent: "limited"
     themes: [
@@ -113,8 +112,11 @@
     panel:
       currentHeight: "34.48967889908257vh"
   "ide-flowtype":
+    customFlowPath: {}
     tryFlowBin: true
   "ide-php": {}
+  "ide-typescript":
+    javascriptSupport: false
   "language-babel":
     autoIndentJSX: true
   linter: {}
@@ -122,6 +124,7 @@
     erlcExecutablePath: "/usr/local/bin/erlc"
   "linter-eslint":
     disableWhenNoEslintrcFileInPath: true
+    fixOnSave: true
   "linter-flow":
     executablePath: "node_modules/.bin/flow"
   "linter-foodcritic":
@@ -195,6 +198,16 @@
     currentPanelMode: "bottom"
   "php-integrator-base":
     phpCommand: "/usr/local/bin/php"
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+      isDisabledIfNotInPackageJson: true
+      showInStatusBar: true
+    prettierOptions:
+      parser: "flow"
+      singleQuote: true
+      trailingComma: "es5"
+    useEslint: true
   "release-notes":
     viewedVersion: "0.95.0"
   "spell-check": {}
