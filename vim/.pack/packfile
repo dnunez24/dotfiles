@@ -21,7 +21,17 @@
 - 
   category: default
   local: false
+  name: "mxw/vim-jsx"
+  opt: false
+- 
+  category: default
+  local: false
   name: nelsyeung/twig.vim
+  opt: false
+- 
+  category: default
+  local: false
+  name: "pangloss/vim-javascript"
   opt: false
 - 
   category: default
