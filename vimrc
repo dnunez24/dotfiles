@@ -140,7 +140,7 @@ endif
 
 
 " Add a bit extra margin to the left
-set foldcolumn=1
+set foldcolumn=2
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -150,6 +150,7 @@ set foldcolumn=1
 syntax enable
 
 " Enable 256 colors palette in Gnome Terminal
+
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
@@ -164,8 +165,11 @@ endtry
 set background=dark
 
 let g:airline_theme='gruvbox'
-
+let g:airline_powerline_fonts = 1
+" let g:airline_skip_empty_sections = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#syntastic#stl_format_err = 1
+let g:airline#extensions#syntastic#stl_format_warn = 1
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -200,13 +204,13 @@ set expandtab
 " Be smart when using tabs ;)
 set smarttab
 
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
+" 1 tab == 2 spaces
+set shiftwidth=2
+set tabstop=2
 
-" Linebreak on 500 characters
+" Linebreak on 80 characters
 set lbr
-set tw=500
+set tw=80
 
 set ai "Auto indent
 set si "Smart indent
@@ -285,7 +289,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 set laststatus=2
 
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+" set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -381,3 +385,18 @@ function! <SID>BufcloseCloseIt()
      execute("bdelete! ".l:currentBufNum)
    endif
 endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Syntastic Setup
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_php_checkers = ['phpcs', 'phpmd']
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_shell = '/bin/bash'
