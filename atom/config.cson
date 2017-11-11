@@ -91,7 +91,8 @@
   drupal:
     fileTypesPhp: "module,install,inc,test,profile"
   editor:
-    fontFamily: "Source Code Pro"
+    fontFamily: "Fira Code"
+    fontSize: 16
     invisibles: {}
     showIndentGuide: true
   emmet:
