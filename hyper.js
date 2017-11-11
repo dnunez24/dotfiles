@@ -4,7 +4,7 @@ module.exports = {
     fontSize: 16,
 
     // font family with optional fallbacks
-    fontFamily: '"Fira Mono", "Source Code Pro", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
+    fontFamily: '"Fira Code", "Source Code Pro", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
 
     cursorBlink: true,
 
