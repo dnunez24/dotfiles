@@ -23,7 +23,7 @@ module.exports = {
 
     // border color (window, tabs)
     // borderColor: '',
-    
+
     modifierKeys: {
       cmdIsMeta: false,
       altIsMeta: true,
