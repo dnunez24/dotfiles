@@ -31,10 +31,6 @@ set fish_user_paths $fish_user_paths "$COMPOSER_HOME/vendor/bin"
 set fish_user_paths $fish_user_paths "$HOME/.platformsh/bin/"
 set fish_user_paths $fish_user_paths "$HOME/.cargo/bin"
 
-if test -e "/Applications/LilyPond.app"
-  set fish_user_paths $fish_user_paths "/Applications/LilyPond.app/Contents/Resources/bin"
-end
-
 # Configure GPG agent
 set -x GPG_TTY (tty)
 set -e SSH_AGENT_PID
