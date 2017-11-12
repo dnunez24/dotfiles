@@ -8,50 +8,20 @@ module.exports = {
 
     cursorBlink: true,
 
-    // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    // cursorColor: 'rgb(177,98,134,0.8)',
-    cursorColor: 'rgb(146,131,116,0.8)',
-
     // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
     cursorShape: 'BLOCK',
-
-    // color of the text
-    foregroundColor: '#ebdbb2',
-
-    // terminal background color
-    backgroundColor: '#282828',
-
-    // border color (window, tabs)
-    // borderColor: '',
 
     modifierKeys: {
       cmdIsMeta: false,
       altIsMeta: true,
     },
 
-    // custom css to embed in the main window
-    css: `
-.tabs_list,
-.tab_tab {
-  color: #ebdbb2 !important;
-  border-color: transparent !important;
-}
-.tab_tab {
-  background-color: transparent;
-}
-.tab_active {
-  background-color: #32302f;
-}
-.tab_active {
-  border-bottom: 2px solid #8ec07c !important;
-}`,
-
     // custom css to embed in the terminal window
     termCSS: `
-x-screen x-row {
-  line-height: initial;
-}
-`,
+      x-screen x-row {
+        line-height: initial;
+      }
+    `,
 
     // set to `true` if you're using a Linux set up
     // that doesn't shows native menus
@@ -65,28 +35,6 @@ x-screen x-row {
 
     // custom padding (css format, i.e.: `top right bottom left`)
     padding: '12px 14px',
-
-    // the full list. if you're going to provide the full color palette,
-    // including the 6 x 6 color cubes and the grayscale map, just provide
-    // an array here instead of a color map object
-    colors: {
-      black: '#282828',
-      red: '#cc241d',
-      green: '#98971a',
-      yellow: '#d79921',
-      blue: '#458588',
-      magenta: '#b16286',
-      cyan: '#689d6a',
-      white: '#a89984',
-      lightBlack: '#928374',
-      lightRed: '#fb4934',
-      lightGreen: '#b8bb26',
-      lightYellow: '#fabd2f',
-      lightBlue: '#83a598',
-      lightMagenta: '#d3869b',
-      lightCyan: '#8ec07c',
-      lightWhite: '#ebdbb2'
-    },
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
     // if left empty, your system's login shell will be used by default
@@ -103,12 +51,15 @@ x-screen x-row {
     bell: false,
 
     // if true, selected text will automatically be copied to the clipboard
-    copyOnSelect: true
+    copyOnSelect: true,
 
     // URL to custom bell
     // bellSoundURL: 'http://example.com/bell.mp3',
 
     // for advanced config flags please refer to https://hyper.is/#cfg
+    hyperStatusLine: {
+      footerTransparent: false,
+    },
   },
 
   // a list of plugins to fetch and install from npm
@@ -117,13 +68,12 @@ x-screen x-row {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: [
-    'hypercwd',
-    'hyper-statusline',
-  ],
+  plugins: ["@dn24/hyper-gruvy-theme", "hyper-statusline", "hypercwd"],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
   // to load it and avoid it being `npm install`ed
-  localPlugins: []
+  localPlugins: [
+
+  ]
 };
