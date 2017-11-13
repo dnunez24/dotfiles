@@ -1,5 +1,6 @@
 # Add Homebrew taps
 tap 'caskroom/cask'
+tap 'caskroom/drivers'
 tap 'caskroom/fonts'
 tap 'caskroom/versions'
 tap 'homebrew/bundle'
