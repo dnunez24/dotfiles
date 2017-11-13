@@ -1,0 +1,164 @@
+#!/usr/bin/env bash
+
+set -e
+
+TAG="${1:-personal}"
+OS_NAME="$(uname -s)"
+PLATFORM="${OS_NAME,,}"
+SOURCE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+NPM_PACKAGE_MANIFEST="${HOME}/.config/npm/packages"
+ATOM_PACKAGE_MANIFEST="$HOME/.config/atom/packages"
+
+install_homebrew
+
+# Install RC manager to link dotfiles
+brew tap thoughtbot/formulae
+brew install rcm
+
+# link this directory to ~/.dotfiles
+ln -snf "$HOME/.dotfiles" "$SOURCE_DIR"
+
+# link dotfiles to home directory
+env RCRC="$HOME/.dotfiles/rcrc" rcup -t "$TAG" -t "$PLATFORM"
+
+set_default_shell
+install_npm_packages "$NPM_PACKAGE_MANIFEST" || exit $?
+install_atom_packages "$ATOM_PACKAGE_MANIFEST" || exit $?
+install_composer_packages || exit $?
+install_fish_plugins || exit $?
+install_vim_plugins || exit $?
+set_os_defaults
+
+function set_os_defaults() {
+  case "$PLATFORM" in
+    "darwin" )
+      # shellcheck source=../tag-darwin/macos-defaults
+      source "$HOME/.macos-defaults"
+      ;;
+  esac
+}
+
+function install_homebrew_packages() {
+  if ! which -s brew; then
+    echo "brew executable unavailable"
+    return 1
+  fi
+
+  # Install bundled Homebrew packages
+  test -f "$HOME/.Brewfile" && brew bundle --global
+  test -f "$HOME/.Brewfile.local" && brew bundle --file=.Brewfile.local
+}
+
+function install_composer_packages() {
+  if ! which -s composer; then
+    echo "composer executable unavailable"
+    return 1
+  fi
+
+  # Install global Composer packages
+  composer global install --prefer-dist
+
+  return 0
+}
+
+function install_atom_packages() {
+  if ! which -s apm; then
+    echo "apm not available to manage Atom packages"
+    return 1
+  fi
+
+  # Install Atom editor packages
+  apm install --compatible --packages-file="$1"
+
+  return 0
+}
+
+function install_fish_plugins() {
+  if ! which -s fish; then
+    echo "fish shell unavailable"
+    return 1
+  fi
+
+  local fisher_url="https://git.io/fisher"
+  local fisher_dest="$HOME/.config/fish/functions/fisher.fish"
+
+  # Install Fisherman plugin manager
+  curl -Lo "$fisher_dest" --create-dirs $fisher_url
+
+  # Install Fisherman plugins
+  fish -c 'fisher update'
+
+  return 0
+}
+
+function install_vim_plugins() {
+  # Install pack to manage vim plugins (https://github.com/maralla/pack)
+  local pack_url="https://github.com/maralla/pack/releases/download/v0.2.0/pack-v0.2.0-x86_64-apple-darwin.tar.gz"
+  local pack_archive="/tmp/pack.tar.gz"
+
+  curl -sSL $pack_url -o $pack_archive
+  tar -vxf $pack_archive -C /usr/local/bin pack
+  rm $pack_archive
+
+  if ! which -s pack; then
+    echo "pack executable unavailable"
+    return 1
+  fi
+
+  # Install vim plugins
+  pack install
+
+  return 0
+}
+
+function install_homebrew() {
+  # Install Homebrew
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+  if ! which -s brew; then
+    echo "Bootstrap failed. Could not find Homebrew executable."
+    return 1
+  fi
+
+  return 0
+}
+
+function set_default_shell() {
+  # Set fish as default shell
+  if [[ ! "$SHELL" = "/usr/local/bin/fish" ]]; then
+    chsh -s "/usr/local/bin/fish" "$USER"
+  fi
+
+  # Add fish to list of available shells
+  if ! grep -q fish /etc/shells; then
+    echo "/usr/local/bin/fish" >> /etc/shells
+  fi
+
+  return 0
+}
+
+function install_npm_packages() {
+  if ! which -s npm; then
+    echo "npm executable unavailable"
+    return 1
+  fi
+
+  if [[ ! -e "$1" ]]; then
+    echo "npm package manifest not found"
+    return 1
+  fi
+
+  # Update npm
+  npm install -g npm
+
+  # Install npm global packages
+  while IFS= read -r pkg; do
+    NPM_PKGS+=" ${pkg}"
+  done < "$1"
+
+  for pkg in "${NPM_PKGS}" "${@}"; do
+    npm install --global "$pkg"
+  done
+
+  return 0
+}
