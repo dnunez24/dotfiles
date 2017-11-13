@@ -1,15 +1,18 @@
-brew "doctl"
-brew "heroku"
-brew "r"
+brew 'doctl'
+brew 'heroku'
+brew 'r'
 
-cask "appzapper"
+cask 'appzapper'
 cask 'caret'
 cask 'dropbox'
 cask 'google-backup-and-sync'
-cask "kactus"
-cask "kindlegen"
-cask "rstudio"
-cask "sketch"
+cask 'kactus'
+cask 'kindlegen'
+cask 'rstudio'
+cask 'sketch'
+cask 'yubico-yubikey-manager'
+cask 'yubico-yubikey-personalization-gui'
+cask 'yubico-yubikey-piv-manager'
 
 mas "iPhoto", id: 408981381
 mas 'Todoist', id: 585829637
