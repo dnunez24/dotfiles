@@ -1,26 +1,60 @@
 [alias]
 
+  a = add
+  # add via interactive patch mode
+  ap = add -p
+  br = branch
+  # show all branches (including remotes)
+  bra = branch -a
+  # Create new branch and checkout
+  cb = checkout -b
+  cl = clone
+  # Cleanup git files (but bail early if not needed)
+  clean = gc --auto
+  # Commit with short message
   cm = commit -m
   co = checkout
-  cb = checkout -b
+  cp = cherry-pick
   dt = difftool
+  # diff staged changes against HEAD (or given ref)
+  dc = diff --cached
+  # show commit history as a graph
   graph = log --graph --oneline --decorate --date=relative --all
+  # reset to a clean working directory and index (changes discarded)
+  hard = reset --hard
+  # show the last commit from the log
   last = log -1 HEAD
+  # list aliases
+  la = "!git config -l | grep alias | cut -c 7-"
   ls = log --pretty=list --date=short --no-merges
   mt = mergetool
-  patch = --no-pager diff --no-color
+  # generate output for a patch
+  patch = !git --no-pager diff --no-color
   preb = pull --rebase
+  # add remote origin tracking branch master
+  raom = remote add origin master
+  pt = push --tags
+  rs = reset
+  rt = remote -v
+  sa = stash apply
+  sl = stash list
+  ss = stash save
+  ssu = stash save -u
+  # show succinct status
   st = status -s
+  # removes a file or files from the index (unstages it)
+  unstage = reset HEAD --
   viz = !gitup
 
 [core]
 
-  autocrlf = input 
+  autocrlf = input
   editor = atom --wait
 
-  # Use custom `.gitignore` and `.gitattributes`
-  excludesfile = ~/.config/git/ignore
+  # Use custom `.gitignore`, `.gitattributes` and hooks
   attributesfile = ~/.config/git/attributes
+  excludesfile = ~/.config/git/ignore
+  hooksPath = ~/.config/git/hooks
 
   pager = diff-so-fancy | less --tabs=4 -RFX
 
@@ -72,7 +106,7 @@
   untracked = cyan
 
 [commit]
-  
+
   gpgsign = true
 
 [credential]
@@ -144,8 +178,8 @@
   default = simple
   # Make `git push` push relevant annotated tags when pushing branches out.
   followTags = true
-  
+
 [user]
   name = Dave Nunez
   email = david.nunez@alumni.stanford.edu
-  signingkey = 80752B7C02AB4ED0
+  signingkey = 02AB4ED0
