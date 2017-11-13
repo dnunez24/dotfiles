@@ -92,6 +92,7 @@
     fileTypesPhp: "module,install,inc,test,profile"
   editor:
     fontFamily: "Fira Code"
+    fontSize: 16
     invisibles: {}
     showIndentGuide: true
   emmet:
