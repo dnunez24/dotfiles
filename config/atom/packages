@@ -23,6 +23,7 @@ gruvbox
 haskell-grammar
 highlight-selected
 language-apache
+language-babel
 language-bats
 language-chef
 language-chuck
