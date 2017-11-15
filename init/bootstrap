@@ -6,7 +6,7 @@ TAG="${1:-personal}"
 PLATFORM="$( uname -s | awk '{print tolower($0)}' )"
 SOURCE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 NPM_PACKAGE_MANIFEST="${HOME}/.config/npm/packages"
-ATOM_PACKAGE_MANIFEST="$HOME/.config/atom/packages"
+ATOM_PACKAGE_MANIFEST="${HOME}/.config/atom/packages"
 
 function set_os_defaults() {
   case "$1" in
