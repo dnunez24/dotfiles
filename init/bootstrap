@@ -9,26 +9,6 @@ SOURCE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 NPM_PACKAGE_MANIFEST="${HOME}/.config/npm/packages"
 ATOM_PACKAGE_MANIFEST="$HOME/.config/atom/packages"
 
-install_homebrew
-
-# Install RC manager to link dotfiles
-brew tap thoughtbot/formulae
-brew install rcm
-
-# link this directory to ~/.dotfiles
-ln -snf "$HOME/.dotfiles" "$SOURCE_DIR"
-
-# link dotfiles to home directory
-env RCRC="$HOME/.dotfiles/rcrc" rcup -t "$TAG" -t "$PLATFORM"
-
-set_default_shell
-install_npm_packages "$NPM_PACKAGE_MANIFEST" || exit $?
-install_atom_packages "$ATOM_PACKAGE_MANIFEST" || exit $?
-install_composer_packages || exit $?
-install_fish_plugins || exit $?
-install_vim_plugins || exit $?
-set_os_defaults
-
 function set_os_defaults() {
   case "$PLATFORM" in
     "darwin" )
@@ -162,3 +142,23 @@ function install_npm_packages() {
 
   return 0
 }
+
+install_homebrew
+
+# Install RC manager to link dotfiles
+brew tap thoughtbot/formulae
+brew install rcm
+
+# link this directory to ~/.dotfiles
+ln -snf "$HOME/.dotfiles" "$SOURCE_DIR"
+
+# link dotfiles to home directory
+env RCRC="$HOME/.dotfiles/rcrc" rcup -t "$TAG" -t "$PLATFORM"
+
+set_default_shell
+install_npm_packages "$NPM_PACKAGE_MANIFEST" || exit $?
+install_atom_packages "$ATOM_PACKAGE_MANIFEST" || exit $?
+install_composer_packages || exit $?
+install_fish_plugins || exit $?
+install_vim_plugins || exit $?
+set_os_defaults
