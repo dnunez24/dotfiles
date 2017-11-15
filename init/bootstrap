@@ -30,6 +30,8 @@ function install_homebrew_packages() {
   # Install bundled Homebrew packages
   test -f "$HOME/.Brewfile" && brew bundle --global
   test -f "$HOME/.Brewfile.local" && brew bundle --file="$HOME/.Brewfile.local"
+
+  return 0
 }
 
 function install_composer_packages() {
