@@ -3,7 +3,7 @@
 set -e
 
 TAG="${1:-personal}"
-PLATFORM="$(uname -s | awk '{print tolower($0)}')"
+PLATFORM="$( uname -s | awk '{print tolower($0)}' )"
 SOURCE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 NPM_PACKAGE_MANIFEST="${HOME}/.config/npm/packages"
 ATOM_PACKAGE_MANIFEST="$HOME/.config/atom/packages"
@@ -13,6 +13,10 @@ function set_os_defaults() {
     "darwin" )
       # shellcheck source=../tag-darwin/macos-defaults
       source "$HOME/.macos-defaults"
+      ;;
+    * )
+      echo "Platform not yet supported"
+      return 1
       ;;
   esac
 }
@@ -160,4 +164,4 @@ install_atom_packages "$ATOM_PACKAGE_MANIFEST" || exit $?
 install_composer_packages || exit $?
 install_fish_plugins || exit $?
 install_vim_plugins || exit $?
-set_os_defaults "$PLATFORM"
+set_os_defaults "$PLATFORM" || exit $?
