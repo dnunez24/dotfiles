@@ -7,6 +7,7 @@ tap 'homebrew/bundle'
 tap 'homebrew/completions'
 tap 'homebrew/core'
 tap 'homebrew/dupes'
+tap 'homebrew/php'
 tap 'homebrew/science'
 tap 'homebrew/versions'
 tap 'thoughtbot/formulae'
@@ -39,12 +40,11 @@ brew 'tmux'
 brew "wget"
 brew 'vim', args: ['--with-override-system-vi']
 
-brew "blackfireio/blackfire/blackfire-agent"
-brew "homebrew/php/composer"
-brew "homebrew/php/php71-imagick"
-brew "homebrew/php/php71-intl"
-brew "homebrew/php/php71-mcrypt"
-brew "homebrew/php/php71-redis"
+brew "composer"
+brew "php71-imagick"
+brew "php71-intl"
+brew "php71-mcrypt"
+brew "php71-redis"
 
 # Install packages from casks
 cask_args appdir: '/Applications'
@@ -70,7 +70,7 @@ cask 'font-source-code-pro'
 cask 'font-source-sans-pro'
 cask 'font-source-serif-pro'
 cask 'gitup'
-cask 'google-chrome'
+# cask 'google-chrome'
 cask "graphiql"
 cask 'hyper'
 cask 'java' unless system '/usr/libexec/java_home --failfast'
@@ -91,6 +91,6 @@ mas 'Monit', id: 1014850245
 mas 'Numbers', id: 409203825
 mas 'Pages', id: 409201541
 mas 'Slack', id: 803453959
-mas 'Spectacle', id: 443987910
+# mas 'Spectacle', id: 443987910
 mas 'The Unarchiver', id: 425424353
 mas 'Xcode', id: 497799835
