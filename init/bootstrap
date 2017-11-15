@@ -118,14 +118,14 @@ function install_homebrew() {
 }
 
 function set_default_shell() {
-  # Set fish as default shell
-  if [[ ! "$SHELL" = "/usr/local/bin/fish" ]]; then
-    chsh -s "/usr/local/bin/fish" "$USER"
-  fi
-
   # Add fish to list of available shells
   if ! grep -q fish /etc/shells; then
     echo "/usr/local/bin/fish" >> /etc/shells
+  fi
+
+  # Set fish as default shell
+  if [[ ! "$SHELL" = "/usr/local/bin/fish" ]]; then
+    chsh -s "/usr/local/bin/fish" "$USER"
   fi
 
   return 0
