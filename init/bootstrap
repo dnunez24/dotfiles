@@ -9,7 +9,7 @@ NPM_PACKAGE_MANIFEST="${HOME}/.config/npm/packages"
 ATOM_PACKAGE_MANIFEST="$HOME/.config/atom/packages"
 
 function set_os_defaults() {
-  case "$PLATFORM" in
+  case "$1" in
     "darwin" )
       # shellcheck source=../tag-darwin/macos-defaults
       source "$HOME/.macos-defaults"
@@ -160,4 +160,4 @@ install_atom_packages "$ATOM_PACKAGE_MANIFEST" || exit $?
 install_composer_packages || exit $?
 install_fish_plugins || exit $?
 install_vim_plugins || exit $?
-set_os_defaults
+set_os_defaults "$PLATFORM"
