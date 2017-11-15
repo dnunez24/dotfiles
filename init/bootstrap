@@ -79,7 +79,7 @@ function install_fish_plugins() {
   curl -Lo "$fisher_dest" --create-dirs $fisher_url
 
   # Install Fisherman plugins
-  fish -c 'fisher update'
+  fish -c 'fisher'
 
   return 0
 }
