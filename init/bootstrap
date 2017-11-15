@@ -120,7 +120,7 @@ function install_homebrew() {
 function set_default_shell() {
   # Add fish to list of available shells
   if ! grep -q fish /etc/shells; then
-    echo "/usr/local/bin/fish" >> /etc/shells
+    echo "/usr/local/bin/fish" | sudo tee -a /etc/shells > /dev/null
   fi
 
   # Set fish as default shell
@@ -157,6 +157,12 @@ function install_npm_packages() {
   return 0
 }
 
+# Ask for the administrator password upfront
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until script has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 install_homebrew
 
 # Install RC manager to link dotfiles
@@ -164,15 +170,18 @@ brew tap thoughtbot/formulae
 brew install rcm
 
 # link this directory to ~/.dotfiles
-ln -snf "$HOME/.dotfiles" "$SOURCE_DIR"
+ln -snf "$HOME/projects/dotfiles" "$HOME/.dotfiles" 
 
 # link dotfiles to home directory
-env RCRC="$HOME/.dotfiles/rcrc" rcup -t "$TAG" -t "$PLATFORM"
+# env RCRC="../rcrc" rcup
+env RCRC="../rcrc" rcup -t "$TAG" -t "$PLATFORM"
 
-set_default_shell
+install_homebrew_packages
+# sudo xcodebuild -license
 install_npm_packages "$NPM_PACKAGE_MANIFEST" || exit $?
 install_atom_packages "$ATOM_PACKAGE_MANIFEST" || exit $?
 install_composer_packages || exit $?
 install_fish_plugins || exit $?
 install_vim_plugins || exit $?
 set_os_defaults "$PLATFORM" || exit $?
+set_default_shell
