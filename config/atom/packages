@@ -22,6 +22,7 @@ git-time-machine
 gruvbox
 haskell-grammar
 highlight-selected
+ide-flowtype
 language-apache
 language-babel
 language-bats
