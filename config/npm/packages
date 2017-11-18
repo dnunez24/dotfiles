@@ -1,5 +1,6 @@
 @bigcommerce/stencil-cli
 @shopify/slate
+@storybook/cli
 create-react-app
 flow-typed
 gatsby-cli
