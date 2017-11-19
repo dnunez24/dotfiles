@@ -4,8 +4,10 @@
 create-react-app
 flow-typed
 gatsby-cli
+generator-electrode
 hpm-cli
 npm
 serverless
 vue-cli
+xclap-cli
 yo
