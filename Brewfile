@@ -23,6 +23,7 @@ brew 'git'
 brew 'git-open'
 brew 'gpg'
 brew 'homebrew/completions/brew-cask-completion'
+brew 'httpie'
 brew 'imagemagick'
 brew 'jq'
 brew "lastpass-cli", args: ["with-pinentry"]
