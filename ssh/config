@@ -1,5 +1,5 @@
 Host *
-    AddKeysToAgent ask
+    AddKeysToAgent yes
     ConnectTimeout 0
     ForwardX11 no
     Include "~/.ssh/config.local"
