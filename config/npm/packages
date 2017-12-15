@@ -6,6 +6,7 @@ flow-typed
 gatsby-cli
 generator-electrode
 hpm-cli
+mermaid.cli
 npm
 serverless
 vue-cli
