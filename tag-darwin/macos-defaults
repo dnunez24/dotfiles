@@ -564,6 +564,11 @@ defaults write -g NSPreferredWebServices '{
     };
 }'
 
+# Use Cloudflare DNS over HTTPS proxy
+ln -snf "$PWD/LaunchDaemons/com.cloudflare.cloudflared.plist" /Library/LaunchDaemons/
+launchctl load -w /Library/LaunchDaemons/com.cloudflare.cloudflared.plist 2> /dev/null
+# TODO: set primary DNS server to 127.0.0.1 for all network interfaces
+
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################

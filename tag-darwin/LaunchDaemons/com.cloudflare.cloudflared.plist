@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>com.cloudflare.cloudflared</string>
+
+    <key>Program</key>
+    <string>/usr/local/bin/cloudflared</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>cloudflared</string>
+        <string>proxy-dns</string>
+    </array>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <dict>
+      <key>SuccessfulExit</key>
+      <false/>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/tmp/com.cloudflare.cloudflared.out.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/tmp/com.cloudflare.cloudflared.err.log</string>
+
+    <key>ProcessType</key>
+    <string>Background</string>
+  </dict>
+</plist>
