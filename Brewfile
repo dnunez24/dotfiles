@@ -42,10 +42,11 @@ brew "wget"
 brew 'vim', args: ['--with-override-system-vi']
 
 brew "composer"
-brew "php71-imagick"
-brew "php71-intl"
-brew "php71-mcrypt"
-brew "php71-redis"
+brew "php@7.1"
+# brew "php71-imagick"
+# brew "php71-intl"
+# brew "php71-mcrypt"
+# brew "php71-redis"
 
 # Install packages from casks
 cask_args appdir: '/Applications'
