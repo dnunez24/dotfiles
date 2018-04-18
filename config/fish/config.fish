@@ -23,7 +23,7 @@ set -x LC_CTYPE en_US.UTF-8
 
 # Set custom bin directories in PATH
 set fish_user_paths "$HOME/.bin"
-set fish_user_paths $fish_user_paths (brew --prefix homebrew/php/php71)/bin
+set fish_user_paths $fish_user_paths (brew --prefix php@7.1)/bin
 set fish_user_paths $fish_user_paths "./vendor/bin"
 set fish_user_paths $fish_user_paths "./node_modules/.bin"
 set fish_user_paths $fish_user_paths "/usr/local/sbin"
