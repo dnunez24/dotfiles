@@ -57,7 +57,7 @@
 [core]
 
   autocrlf = input
-  editor = atom --wait
+  editor = code --wait
 
   # Use custom `.gitignore`, `.gitattributes` and hooks
   attributesfile = ~/.config/git/attributes
