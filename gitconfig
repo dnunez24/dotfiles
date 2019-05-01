@@ -40,6 +40,7 @@
   # generate output for a patch
   patch = !git --no-pager diff --no-color
   pr = pull --rebase
+  pf = push --force-with-lease
   pt = push --tags
   # add remote origin tracking branch master
   raom = remote add origin master
