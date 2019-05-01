@@ -6,6 +6,7 @@
   br = branch
   # show all branches (including remotes)
   bra = branch -a
+  ci = commit
   # Amend the previous commit
   ca = commit --amend
   # Create new branch and checkout
@@ -21,6 +22,8 @@
   cms = commit --squash -m
   co = checkout
   cp = cherry-pick
+  # Commit with intent to rebase with autosquash
+  cs = commit --squash
   dt = difftool
   # diff staged changes against HEAD (or given ref)
   dc = diff --cached
