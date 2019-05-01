@@ -194,6 +194,10 @@
   # Make `git push` push relevant annotated tags when pushing branches out.
   followTags = true
 
+[rebase]
+
+  autosquash = true
+
 [user]
   name = Dave Nunez
   email = david.nunez@alumni.stanford.edu
