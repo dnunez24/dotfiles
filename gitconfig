@@ -43,7 +43,7 @@
   pt = push --tags
   # add remote origin tracking branch master
   raom = remote add origin master
-  ri = git rebase --interactive
+  ri = rebase --interactive
   rs = reset
   rt = remote -v
   sa = stash apply
