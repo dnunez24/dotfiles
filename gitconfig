@@ -37,9 +37,11 @@
   # generate output for a patch
   patch = !git --no-pager diff --no-color
   pr = pull --rebase
+  pt = push --tags
   # add remote origin tracking branch master
   raom = remote add origin master
-  pt = push --tags
+  ri = git rebase --interactive
+  ria = git rebase --interactive --autosquash
   rs = reset
   rt = remote -v
   sa = stash apply
