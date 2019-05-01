@@ -44,7 +44,6 @@
   # add remote origin tracking branch master
   raom = remote add origin master
   ri = git rebase --interactive
-  ria = git rebase --interactive --autosquash
   rs = reset
   rt = remote -v
   sa = stash apply
