@@ -57,6 +57,10 @@
   unstage = reset HEAD --
   viz = !gitup
 
+[commit]
+
+  verbose = true
+
 [core]
 
   autocrlf = input
