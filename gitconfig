@@ -6,15 +6,24 @@
   br = branch
   # show all branches (including remotes)
   bra = branch -a
+  ci = commit
+  # Amend the previous commit
+  ca = commit --amend
   # Create new branch and checkout
   cb = checkout -b
   cl = clone
   # Cleanup git files (but bail early if not needed)
   clean = gc --auto
+  # Commit with intent to rebase with autosquash
+  cf = commit --fixup
   # Commit with short message
   cm = commit -m
+  # Commit with intent to rebase with autosquash (plus a message)
+  cms = commit --squash -m
   co = checkout
   cp = cherry-pick
+  # Commit with intent to rebase with autosquash
+  cs = commit --squash
   dt = difftool
   # diff staged changes against HEAD (or given ref)
   dc = diff --cached
@@ -30,10 +39,12 @@
   mt = mergetool
   # generate output for a patch
   patch = !git --no-pager diff --no-color
-  preb = pull --rebase
+  pr = pull --rebase
+  pf = push --force-with-lease
+  pt = push --tags
   # add remote origin tracking branch master
   raom = remote add origin master
-  pt = push --tags
+  ri = rebase --interactive
   rs = reset
   rt = remote -v
   sa = stash apply
@@ -46,10 +57,14 @@
   unstage = reset HEAD --
   viz = !gitup
 
+[commit]
+
+  verbose = true
+
 [core]
 
   autocrlf = input
-  editor = atom --wait
+  editor = code --wait
 
   # Use custom `.gitignore`, `.gitattributes` and hooks
   attributesfile = ~/.config/git/attributes
@@ -175,9 +190,13 @@
 
 [push]
 
-  default = simple
+  default = current
   # Make `git push` push relevant annotated tags when pushing branches out.
   followTags = true
+
+[rebase]
+
+  autosquash = true
 
 [user]
   name = Dave Nunez
