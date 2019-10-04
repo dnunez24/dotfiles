@@ -1,12 +1,16 @@
+tap 'cloudflare/cloudflare'
+tap 'dart-lang/dart'
+tap 'shopify/shopify'
+tap 'thoughtbot/formulae'
+
 brew 'doctl'
 brew 'heroku'
 brew 'r'
 
 cask 'appzapper'
-cask 'caret'
 cask 'dropbox'
+cask 'google-chrome'
 cask 'google-backup-and-sync'
-cask 'kactus'
 cask 'kindlegen'
 cask 'rstudio'
 cask 'sketch'
