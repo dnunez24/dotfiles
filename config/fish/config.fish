@@ -33,6 +33,7 @@ set fish_user_paths $fish_user_paths "$HOME/Library/Python/2.7/bin"
 set fish_user_paths $fish_user_paths "/usr/local/opt/flutter/bin"
 set fish_user_paths $fish_user_paths "$GEM_HOME/bin"
 set fish_user_paths $fish_user_paths "$HOME/.pub-cache/bin"
+set fish_user_paths $fish_user_paths "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 
 # Configure GPG agent
