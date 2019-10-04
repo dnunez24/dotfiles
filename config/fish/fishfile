@@ -1,15 +1,9 @@
 dnunez24/angled
-fisherman/docker-completion
 brgmnn/fish-docker-compose
-fisherman/fishkit
 fisherman/fishtape
-fisherman/get
 fisherman/getopts
-fisherman/git_util
 fisherman/gitignore
-fisherman/menu
 dnunez24/myip
-fisherman/nodenv
-fisherman/rbenv
 fisherman/spin
 fisherman/z
+fishpkg/fish-git-util
