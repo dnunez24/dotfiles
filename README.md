@@ -8,7 +8,9 @@ TODO
 
 ## Install
 
-TODO
+```sh
+$ init/bootstrap
+```
 
 ## Update
 
