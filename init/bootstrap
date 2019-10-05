@@ -5,7 +5,7 @@ set -e
 TAG="${1:-personal}"
 PLATFORM="$( uname -s | awk '{print tolower($0)}' )"
 SOURCE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-DOTFILES_DIR="$( cd "$SOURCE_DIR" && pwd )"
+DOTFILES_DIR="$( cd "${SOURCE_DIR}/.." && pwd )"
 PACK_VERSION="0.2.0"
 NPM_PACKAGE_MANIFEST="${HOME}/.config/npm/packages"
 VSCODE_PACKAGE_MANIFEST="${HOME}/.config/vscode/extensions"
@@ -169,6 +169,7 @@ install_homebrew
 # Install RC manager to link dotfiles
 brew tap thoughtbot/formulae
 brew install rcm
+brew install node
 
 # link this directory to ~/.dotfiles
 ln -snf "$DOTFILES_DIR" "$HOME/.dotfiles"
