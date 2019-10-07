@@ -1,3 +1,7 @@
+set -U fish_greeting
+
+[ -f "$HOME/.env" ] && cat "$HOME/.env" | xargs -L1 | set -U
+
 # do things that only make sense for an interactive shell here
 if status --is-interactive
   # use vi mode keybindings
@@ -23,17 +27,19 @@ set -x LC_ALL en_US.UTF-8
 set -x LC_CTYPE en_US.UTF-8
 
 # Set custom bin directories in PATH
-set fish_user_paths "$HOME/.bin"
-set fish_user_paths $fish_user_paths "./vendor/bin"
-set fish_user_paths $fish_user_paths "./node_modules/.bin"
-set fish_user_paths $fish_user_paths "/usr/local/sbin"
-set fish_user_paths $fish_user_paths "$COMPOSER_HOME/vendor/bin"
-set fish_user_paths $fish_user_paths "$HOME/.cargo/bin"
-set fish_user_paths $fish_user_paths "$HOME/Library/Python/2.7/bin"
-set fish_user_paths $fish_user_paths "/usr/local/opt/flutter/bin"
-set fish_user_paths $fish_user_paths "$GEM_HOME/bin"
-set fish_user_paths $fish_user_paths "$HOME/.pub-cache/bin"
-set fish_user_paths $fish_user_paths "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+set fish_user_paths \
+  "$HOME/.bin" \
+  "./vendor/bin" \
+  "./node_modules/.bin" \
+  "/usr/local/sbin" \
+  "$COMPOSER_HOME/vendor/bin" \
+  "$HOME/.cargo/bin" \
+  "$HOME/Library/Python/2.7/bin" \
+  "/usr/local/opt/flutter/bin" \
+  "$GEM_HOME/bin" \
+  "$HOME/.pub-cache/bin" \
+  "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" \
+  $fish_user_paths
 
 
 # Configure GPG agent
@@ -49,10 +55,18 @@ end
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
-[ -f /Users/dnunez/GitHub/dotfiles/node_modules/tabtab/.completions/serverless.fish ]; and . /Users/dnunez/GitHub/dotfiles/node_modules/tabtab/.completions/serverless.fish
+[ -f /Users/dnunez/GitHub/dotfiles/node_modules/tabtab/.completions/serverless.fish ] && source /Users/dnunez/GitHub/dotfiles/node_modules/tabtab/.completions/serverless.fish
+
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
-[ -f /Users/dnunez/GitHub/dotfiles/node_modules/tabtab/.completions/sls.fish ]; and . /Users/dnunez/GitHub/dotfiles/node_modules/tabtab/.completions/sls.fish
+[ -f /Users/dnunez/GitHub/dotfiles/node_modules/tabtab/.completions/sls.fish ] && source /Users/dnunez/GitHub/dotfiles/node_modules/tabtab/.completions/sls.fish
+
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.fish ] && source /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.fish
+
+# The next line updates PATH for the Google Cloud SDK.
+[ -f "$HOME/google-cloud-sdk/path.fish.inc" ] && source "$HOME/google-cloud-sdk/path.fish.inc"
 
 if status --is-interactive
   set -g fish_user_abbreviations
@@ -60,9 +74,4 @@ if status --is-interactive
   abbr --add dkrc docker-compose
 end
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/google-cloud-sdk/path.fish.inc" ]; . "$HOME/google-cloud-sdk/path.fish.inc"; end
 
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.fish ]; and . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.fish
