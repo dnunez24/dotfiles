@@ -42,15 +42,19 @@ set fish_user_paths \
   $fish_user_paths
 
 
-# Configure GPG agent
-set -x GPG_TTY (tty)
-set -e SSH_AGENT_PID
-set -q gnupg_SSH_AUTH_SOCK_by; or set gnupg_SSH_AUTH_SOCK_by 0
+if test -n "$has_gpg_keys"
+  # Configure GPG agent
+  set -x GPG_TTY "(tty)"
+  set -e SSH_AGENT_PID
+  set -q gnupg_SSH_AUTH_SOCK_by || set gnupg_SSH_AUTH_SOCK_by 0
 
-if test "$gnupg_SSH_AUTH_SOCK_by" -ne %self
-  set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
-  # gpg-connect-agent updatestartuptty /bye
-  gpgconf --launch gpg-agent
+  if test "$gnupg_SSH_AUTH_SOCK_by" -ne %self
+    set -x SSH_AUTH_SOCK "(gpgconf --list-dirs agent-ssh-socket)"
+    # gpg-connect-agent updatestartuptty /bye
+    gpgconf --launch gpg-agent
+  end
+else
+  eval (ssh-agent -c)
 end
 
 # tabtab source for serverless package
