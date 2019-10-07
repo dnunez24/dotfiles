@@ -1,6 +1,6 @@
 set -U fish_greeting
 
-[ -f "$HOME/.env" ] && cat "$HOME/.env" | xargs -L1 | set -U
+[ -f "$HOME/.env" ] && export (cat "$HOME/.env")
 
 # do things that only make sense for an interactive shell here
 if status --is-interactive
@@ -77,5 +77,3 @@ if status --is-interactive
   abbr --add dkr docker
   abbr --add dkrc docker-compose
 end
-
-
