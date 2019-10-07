@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-ln -snF "${HOME}/.config/vscode/settings.json" "${HOME}/Library/Application\ Support/Code/User/settings.json"
-ln -snF "${HOME}/.config/vscode/keybindings.json" "${HOME}/Library/Application\ Support/Code/User/keybindings.json"
-ln -snF "${HOME}/.config/vscode/snippets" "${HOME}/Library/Application\ Support/Code/User/snippets"
+ln -snF "${HOME}/.config/vscode/settings.json" "${HOME}/Library/Application Support/Code/User/settings.json"
+ln -snF "${HOME}/.config/vscode/keybindings.json" "${HOME}/Library/Application Support/Code/User/keybindings.json"
+ln -snF "${HOME}/.config/vscode/snippets" "${HOME}/Library/Application Support/Code/User/snippets"
