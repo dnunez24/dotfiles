@@ -62,9 +62,11 @@ cask 'visual-studio-code'
 mas 'Keynote', id: 409183694
 mas "LastPass", id: 926036361
 mas "LittleIpsum", id: 405772121
+mas 'Magnet', id: 441258766
 mas 'Monit', id: 1014850245
 mas 'Numbers', id: 409203825
 mas 'Pages', id: 409201541
 mas 'Slack', id: 803453959
+mas 'TickTick', id: 966085870
 mas 'The Unarchiver', id: 425424353
 mas 'Xcode', id: 497799835
