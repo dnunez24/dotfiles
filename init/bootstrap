@@ -62,7 +62,7 @@ function install_vscode_packages() {
   fi
 
   # Install VS Code editor packages
-  code --force --install-extension < "$1"
+  cat "$1" | xargs -L1 code --force --install-extension
 
   return 0
 }
@@ -107,6 +107,13 @@ function install_vim_plugins() {
 }
 
 function install_homebrew() {
+  local homebrew="$(which brew)"
+
+  if [[ -n $homebrew ]]; then
+    echo "Homebrew is already installed. Skipping install."
+    return 0
+  fi
+
   # Install Homebrew
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -144,17 +151,13 @@ function install_npm_packages() {
   fi
 
   # Update npm
+  echo "Update global npm version"
   npm install -g npm
 
   # Install npm global packages
-  while IFS= read -r pkg; do
-    NPM_PKGS+=" ${pkg}"
-  done < "$1"
-
-  for pkg in "${NPM_PKGS}" "${@}"; do
-    npm install --global "$pkg"
-  done
-
+  echo "Install global npm packages"
+  cat "${NPM_PKGS}" | xargs -L1 npm install --global
+  
   return 0
 }
 
@@ -175,14 +178,13 @@ brew install node
 ln -snf "$DOTFILES_DIR" "$HOME/.dotfiles"
 
 # link dotfiles to home directory
-# env RCRC="../rcrc" rcup
 env RCRC="${DOTFILES_DIR}/rcrc" rcup -t "$TAG" -t "$PLATFORM"
 
-install_homebrew_packages
+# install_homebrew_packages
 # sudo xcodebuild -license
 install_npm_packages "$NPM_PACKAGE_MANIFEST" || exit $?
 install_vscode_packages "$VSCODE_PACKAGE_MANIFEST" || exit $?
-install_composer_packages || exit $?
+# install_composer_packages || exit $?
 install_fish_plugins || exit $?
 install_vim_plugins || exit $?
 set_os_defaults "$PLATFORM" || exit $?
