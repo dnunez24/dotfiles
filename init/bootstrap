@@ -176,7 +176,7 @@ ln -snf "$DOTFILES_DIR" "$HOME/.dotfiles"
 
 # link dotfiles to home directory
 # env RCRC="../rcrc" rcup
-env RCRC="../rcrc" rcup -t "$TAG" -t "$PLATFORM"
+env RCRC="${DOTFILES_DIR}/rcrc" rcup -t "$TAG" -t "$PLATFORM"
 
 install_homebrew_packages
 # sudo xcodebuild -license
