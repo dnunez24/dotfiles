@@ -1,9 +1,8 @@
 # Add Homebrew taps
-tap 'caskroom/cask'
-tap 'caskroom/drivers'
-tap 'caskroom/fonts'
-tap 'caskroom/versions'
 tap 'homebrew/bundle'
+tap 'homebrew/cask-drivers'
+tap 'homebrew/cask-fonts'
+tap 'homebrew/cask-versions'
 tap 'homebrew/core'
 tap 'thoughtbot/formulae'
 
@@ -17,10 +16,9 @@ brew 'fpp'
 brew 'git'
 brew 'git-open'
 brew 'gpg'
-brew 'homebrew/completions/brew-cask-completion'
 brew 'httpie'
 brew 'jq'
-brew "lastpass-cli", args: ["with-pinentry"]
+brew "lastpass-cli"
 brew 'mas'
 brew 'node'
 brew 'openssh'
@@ -29,7 +27,7 @@ brew 'rcm'
 brew 'shellcheck'
 brew 'terminal-notifier'
 brew "wget"
-brew 'vim', args: ['--with-override-system-vi']
+brew 'vim'
 
 # Install packages from casks
 cask_args appdir: '/Applications'
