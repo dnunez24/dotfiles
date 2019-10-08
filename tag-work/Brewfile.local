@@ -1,3 +1,4 @@
 tap 'nike-inc/nike'
 
 brew 'piggyback'
+brew 'akamai'
