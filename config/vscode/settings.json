@@ -20,5 +20,10 @@
   "search.location": "panel",
   "terminal.integrated.shell.osx": "/usr/local/bin/fish",
   "terminal.integrated.copyOnSelection": true,
-  "eslint.autoFixOnSave": true
+  "eslint.autoFixOnSave": true,
+  "eslint.lintTask.enable": true,
+  "git.autoStash": true,
+  "remote.containers.workspaceMountConsistency": "delegated",
+  "terminal.integrated.fontSize": 14,
+  "prettier.requireConfig": true
 }
