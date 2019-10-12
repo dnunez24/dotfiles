@@ -1,7 +1,8 @@
 {
   "workbench.colorTheme": "Gruvbox Dark Medium",
   "php.suggest.basic": false,
-  "editor.fontFamily": "'Fira Mono', 'Source Code Pro', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "'Fira Code', 'Source Code Pro', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.tabSize": 2,
   "php.executablePath": "/usr/local/bin/php",
