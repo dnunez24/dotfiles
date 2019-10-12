@@ -1,4 +1,5 @@
 set -U fish_greeting
+eval (starship init fish)
 
 [ -f "$HOME/.env" ] && export (cat "$HOME/.env")
 
