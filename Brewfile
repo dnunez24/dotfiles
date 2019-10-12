@@ -25,6 +25,7 @@ brew 'openssh'
 brew 'pinentry-mac'
 brew 'rcm'
 brew 'shellcheck'
+brew 'starship'
 brew 'terminal-notifier'
 brew "wget"
 brew 'vim'
