@@ -1,5 +1,4 @@
 set -U fish_greeting
-eval (starship init fish)
 
 [ -f "$HOME/.env" ] && export (cat "$HOME/.env")
 
@@ -78,3 +77,5 @@ if status --is-interactive
   abbr --add dkr docker
   abbr --add dkrc docker-compose
 end
+
+eval (starship init fish)
