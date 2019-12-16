@@ -120,10 +120,6 @@
   changed = green
   untracked = cyan
 
-[commit]
-
-  gpgsign = true
-
 [credential]
 
   helper = osxkeychain
