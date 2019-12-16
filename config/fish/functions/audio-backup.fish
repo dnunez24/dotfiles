@@ -3,7 +3,7 @@ function audio-backup --description "Back up audio production files to AWS S3"
   set -l s3Bucket "s3://audio-backups"
   set -l excludes
 
-  for item in "*/.DS_Store" "$musicDir/iTunes/*" "$musicDir/GarageBand/*" "$musicDir/iPod/*" "$musicDir/Spitfire Audio/Settings/.ImageCache/*"
+  for item in "*.DS_Store" "$musicDir/iTunes/*" "$musicDir/GarageBand/*" "$musicDir/iPod/*" "$musicDir/Spitfire Audio/Settings/.ImageCache/*"
     set excludes $excludes "--exclude" "$item"
   end
 
