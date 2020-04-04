@@ -44,6 +44,7 @@
   pt = push --tags
   # add remote origin tracking branch master
   raom = remote add origin master
+  rename = branch -m
   ri = rebase --interactive
   rs = reset
   rt = remote -v
