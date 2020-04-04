@@ -4,7 +4,6 @@ tap 'shopify/shopify'
 tap 'thoughtbot/formulae'
 
 brew 'doctl'
-brew 'heroku'
 brew 'r'
 
 cask 'appzapper'
