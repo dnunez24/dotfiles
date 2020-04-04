@@ -127,7 +127,7 @@
 
 [diff]
 
-  tool = Kaleidoscope
+  tool = vscode
   # Detect copies as well as renames
   renames = copies
 
@@ -135,9 +135,13 @@
 
   prompt = false
 
-[difftool "Kaleidoscope"]
+[difftool "ksdiff"]
 
   cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
+[difftool "vscode"]
+
+  cmd = code --wait --reuse-window --diff $LOCAL $REMOTE
 
 [format]
 
@@ -170,16 +174,20 @@
 
 [merge]
 
-  tool = Kaleidoscope
+  tool = vscode
 
 [mergetool]
 
   prompt = false
 
-[mergetool "Kaleidoscope"]
+[mergetool "ksdiff"]
 
   cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
   trustexitcode = true
+
+[mergetool "vscode"]
+
+  cmd = code --wait --reuse-window $MERGED
 
 [pretty]
 
