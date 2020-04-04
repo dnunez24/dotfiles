@@ -27,5 +27,8 @@
   "eslint.lintTask.enable": true,
   "git.autoStash": true,
   "remote.containers.workspaceMountConsistency": "delegated",
-  "prettier.requireConfig": true
+  "prettier.requireConfig": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }
