@@ -1,5 +1,5 @@
 init-author-name=David Nuñez
 init-author-email=david.nunez@alumni.stanford.edu
-init-author-url=https://davidanunez.com/
+init-author-url=https://davidanunez.com
 init-license=MIT
-init-version=0.0.1
+init-version=0.1.0
