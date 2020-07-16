@@ -6,6 +6,8 @@ These are my dotfiles. There are many like them, but these ones are mine.
 
 TODO
 
+Managed by [rcm](https://thoughtbot.github.io/rcm/)
+
 ## Install
 
 ```sh

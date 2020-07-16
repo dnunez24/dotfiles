@@ -1,2 +1,0 @@
-EXCLUDES="README.md LICENSE init"
-DOTFILES_DIRS="$HOME/.dotfiles.local $HOME/.dotfiles"

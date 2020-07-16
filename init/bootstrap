@@ -180,12 +180,12 @@ ln -snf "$DOTFILES_DIR" "$HOME/.dotfiles"
 # link dotfiles to home directory
 env RCRC="${DOTFILES_DIR}/rcrc" rcup -t "$TAG" -t "$PLATFORM"
 
-# install_homebrew_packages
-# sudo xcodebuild -license
+install_homebrew_packages
+xcodebuild -runFirstLaunch
 install_npm_packages "$NPM_PACKAGE_MANIFEST" || exit $?
 install_vscode_packages "$VSCODE_PACKAGE_MANIFEST" || exit $?
 # install_composer_packages || exit $?
 install_fish_plugins || exit $?
 install_vim_plugins || exit $?
-set_os_defaults "$PLATFORM" || exit $?
+# set_os_defaults "$PLATFORM" || exit $?
 set_default_shell

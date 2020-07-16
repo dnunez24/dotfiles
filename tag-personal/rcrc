@@ -1,0 +1,4 @@
+DOTFILES_DIRS="$HOME/.dotfiles"
+EXCLUDES="README.md LICENSE init"
+PLATFORM=darwin
+TAGS=personal

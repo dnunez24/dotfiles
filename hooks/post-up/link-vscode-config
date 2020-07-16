@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
-ln -snF "${HOME}/.config/vscode/settings.json" "${HOME}/Library/Application Support/Code/User/settings.json"
-ln -snF "${HOME}/.config/vscode/keybindings.json" "${HOME}/Library/Application Support/Code/User/keybindings.json"
-ln -snF "${HOME}/.config/vscode/snippets" "${HOME}/Library/Application Support/Code/User/snippets"
+VS_CODE_CONFIG_DIR="${HOME}/.config/vscode"
+VS_CODE_USER_DIR="${HOME}/Library/Application Support/Code/User"
+
+if [ -d "$VS_CODE_USER_DIR" ]; then
+  ln -snF "${VS_CODE_CONFIG_DIR}/settings.json" "${VS_CODE_USER_DIR}/settings.json"
+  ln -snF "${VS_CODE_CONFIG_DIR}/keybindings.json" "${VS_CODE_USER_DIR}/keybindings.json"
+  ln -snF "${VS_CODE_CONFIG_DIR}/snippets" "${VS_CODE_USER_DIR}/snippets"
+fi
