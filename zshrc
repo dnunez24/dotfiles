@@ -1,14 +1,38 @@
+export COMPOSER_HOME="$HOME/.composer"
+export GEM_HOME="$HOME/.gem"
+
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+paths=(
+  # dotfiles bins
+  "$HOME/.bin"
+  # Homebrew package bins
+  "/usr/local/sbin"
+  # Rust bins
+  "$HOME/.cargo/bin"
+  # Flutter bins
+  "/usr/local/opt/flutter/bin"
+  # PHP composer package bins
+  "$COMPOSER_HOME/vendor/bin"
+  # Ruby gem bins
+  "$GEM_HOME/bin"
+  # Dart bins
+  "$HOME/.pub-cache/bin"
+  # Visual Studio Code program
+  "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+  # Default paths last in lookup chain
+  "$PATH"
+)
+
+export PATH=${(j/:/)paths}
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/DNun14/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -68,7 +92,13 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  aws
+  docker
+  git
+  github
+  gpg-agent
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -78,6 +108,10 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
+export LANG="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -85,6 +119,9 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+
+# Set default editor to VS Code
+export EDITOR="code -w"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -97,14 +134,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshrc="code -w $HOME/.zshrc"
+alias ohmyzsh="code -w $HOME/.oh-my-zsh"
+unalias run-help
 
-plugins=(
-  aws
-  docker
-  git
-  github
-  gpg-agent
-)
+autoload run-help
+autoload ssh-passwd
+
+bindkey -v
 
 eval "$(starship init zsh)"
-
