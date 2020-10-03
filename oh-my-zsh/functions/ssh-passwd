@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+# ssh-passwd
+#
+# Prompts user to update password for all SSH keys stored in ~/.ssh
+# Useful for bulk updating your key passwords to be in sync with your
+# OS password when changes are required by password policies, etc.
+
+for key in ~/.ssh/id_*; do
+  # when file name doesn't end with .pub we assume it's a private key file
+  if [[ ! $key =~ \.pub$ ]]; then
+    echo "Update password for $key"
+    ssh-keygen -p -f $key
+  fi
+done
