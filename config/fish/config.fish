@@ -20,6 +20,8 @@ set -x EDITOR "code -w"
 set -x COMPOSER_HOME "$HOME/.composer"
 set -x GEM_HOME "$HOME/.gem"
 
+set -x FLUTTER_ROOT "/usr/local/opt/flutter"
+
 # Fixes for Ruby JSON parser throwing errors from Chef gems
 set -x LANG en_US.UTF-8
 set -x LANGUAGE en_US.UTF-8
@@ -39,6 +41,8 @@ set fish_user_paths \
   "$GEM_HOME/bin" \
   "$HOME/.pub-cache/bin" \
   "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" \
+  "/usr/local/share/dotnet" \
+  "$HOME/.poetry/bin" \
   $fish_user_paths
 
 
