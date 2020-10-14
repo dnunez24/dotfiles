@@ -19,5 +19,15 @@
     "key": "alt+cmd+down",
     "command": "-editor.action.insertCursorBelow",
     "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+r",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Rust: cargo run"
+  },
+  {
+    "key": "alt+shift+n",
+    "command": "vscodeMarkdownNotes.newNote",
+    "when": "editorTextFocus && editorLangId == markdown"
   }
 ]
