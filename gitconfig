@@ -41,6 +41,7 @@
   patch = !git --no-pager diff --no-color
   pr = pull --rebase
   pf = push --force-with-lease
+  po = remote prune origin
   pt = push --tags
   # add remote origin tracking branch master
   raom = remote add origin master
@@ -57,6 +58,7 @@
   # removes a file or files from the index (unstages it)
   unstage = reset HEAD --
   viz = !gitup
+  whoops = reset HEAD~1
 
 [commit]
 
