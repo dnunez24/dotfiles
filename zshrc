@@ -1,3 +1,5 @@
+. "${HOME}/.env"
+
 export COMPOSER_HOME="$HOME/.composer"
 export GEM_HOME="$HOME/.gem"
 
@@ -11,6 +13,8 @@ paths=(
   "$HOME/.cargo/bin"
   # Flutter bins
   "/usr/local/opt/flutter/bin"
+  # Python poetry package manager
+  "$HOME/.poetry/bin"
   # PHP composer package bins
   "$COMPOSER_HOME/vendor/bin"
   # Ruby gem bins
@@ -93,11 +97,13 @@ export ZSH="$HOME/.oh-my-zsh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  akamai
   aws
   docker
   git
   github
-  gpg-agent
+  # gpg-agent
+  poetry
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -123,6 +129,8 @@ export LC_CTYPE="en_US.UTF-8"
 # Set default editor to VS Code
 export EDITOR="code -w"
 
+export AWS_PROFILE="iamr-dotcom-snkrs-team"
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -138,8 +146,9 @@ alias zshrc="code -w $HOME/.zshrc"
 alias ohmyzsh="code -w $HOME/.oh-my-zsh"
 unalias run-help
 
-autoload run-help
-autoload ssh-passwd
+autoload run-help ssh-passwd
+functions ssh-passwd
+# functions iscached ssh-passwd
 
 bindkey -v
 

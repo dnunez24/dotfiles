@@ -1,6 +1,8 @@
 [alias]
 
   a = add
+  # modify the previous commit (including message)
+  amend = commit -a --amend
   # add via interactive patch mode
   ap = add -p
   br = branch
@@ -44,21 +46,27 @@
   po = remote prune origin
   pt = push --tags
   # add remote origin tracking branch master
-  raom = remote add origin master
+  raom = remote add origin main
   rename = branch -m
   ri = rebase --interactive
   rs = reset
   rt = remote -v
   sa = stash apply
+  # adds all changes including untracked files and creates a commit
+  save  = "!git add -A && git commit -m 'WIP'"
   sl = stash list
   ss = stash save
   ssu = stash save -u
   # show succinct status
   st = status -s
+  # resets the previous commit, but keeps all the changes from that commit in the working directory
+  undo = reset HEAD~1 --mixed
   # removes a file or files from the index (unstages it)
   unstage = reset HEAD --
+  unwip = "!git reset --soft HEAD~1 && git unstage"
   viz = !gitup
-  whoops = reset HEAD~1
+  # commits only tracked changes with the WIP message
+  wip = commit -am 'WIP'
 
 [commit]
 
@@ -208,4 +216,6 @@
 [user]
   name = Dave Nunez
   email = david.nunez@alumni.stanford.edu
-  signingkey = 1F2A2DF0
+  # signingkey = 1F2A2DF0
+[pull]
+	rebase = true

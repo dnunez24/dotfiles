@@ -31,11 +31,8 @@
   "aws.samcli.location": "/usr/local/bin/sam",
   "phpcs.executablePath": "/usr/local/bin/phpcs",
   "phpcs.showSources": true,
-  "FSharp.useSdkScripts": true,
   "rust-client.rustupPath": "",
   "rust-client.disableRustup": true,
-  "prettier.trailingComma": "all",
-  "python.jediEnabled": false,
   "python.languageServer": "Pylance",
   "python.analysis.typeCheckingMode": "basic",
   "[dart]": {

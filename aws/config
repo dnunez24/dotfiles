@@ -1,3 +1,6 @@
 [default]
 output = json
 region = us-east-1
+[profile iamr-dotcom-snkrs-team]
+region = us-east-1
+output = json
