@@ -16,7 +16,17 @@ $ init/bootstrap
 
 ## Update
 
-TODO
+For updating a personal MacOS system, run the following command from the the root directory of this repo
+
+```
+env RCRC="./tag-personal/rcrc" rcup 
+```
+
+For updating a work MacOS system, run the following command from the the root directory of this repo
+
+```
+env RCRC="./tag-work/rcrc" rcup 
+```
 
 ## Customize
 
