@@ -8,7 +8,7 @@
   br = branch
   # show all branches (including remotes)
   bra = branch -a
-  ci = commit
+  c = commit
   # Amend the previous commit
   ca = commit --amend
   # Create new branch and checkout
@@ -29,6 +29,9 @@
   dt = difftool
   # diff staged changes against HEAD (or given ref)
   dc = diff --cached
+  dsf = "diff --color"
+  # Add staged files to the previous commit without changing the message
+  forgot = commit --amend --no-edit
   # show commit history as a graph
   graph = log --graph --oneline --decorate --date=relative --all
   # reset to a clean working directory and index (changes discarded)
@@ -39,6 +42,7 @@
   la = "!git config -l | grep alias | cut -c 7-"
   ls = log --pretty=list --date=short --no-merges
   mt = mergetool
+  p = push
   # generate output for a patch
   patch = !git --no-pager diff --no-color
   pr = pull --rebase
@@ -82,7 +86,10 @@
   excludesfile = ~/.config/git/ignore
   hooksPath = ~/.config/git/hooks
 
-  pager = diff-so-fancy | less --tabs=4 -RFX
+  pager = ""
+
+  [pager]
+    dsf = "diff-so-fancy | less --tabs=4 -RFXS --pattern '^(Date|added|deleted|modified): '"
 
   # Treat spaces before tabs and all kinds of trailing whitespace as an error
   # [default] trailing-space: looks for spaces at the end of a line
@@ -111,18 +118,19 @@
 
 [color "diff"]
 
-  meta = yellow bold
-  commit = green bold
-  frag = magenta bold # line info
-  old = red bold # deletions
-  new = green bold # additions
-  whitespace = red reverse
+  meta = "11"
+  frag = "magenta bold"
+  func = "146 bold"
+  commit = "yellow bold"
+  old = "red bold"
+  new = "green bold"
+  whitespace = "red reverse"
 
 [color "diff-highlight"]
 
-  oldNormal = red bold
+  oldNormal = "red bold"
   oldHighlight = "red bold 52"
-  newNormal = green bold
+  newNormal = "green bold"
   newHighlight = "green bold 22"
 
 [color "status"]
@@ -181,6 +189,7 @@
 [init]
 
   templateDir = ~/.config/git/templates
+	defaultBranch = main
 
 [merge]
 
