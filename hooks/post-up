@@ -1,3 +1,33 @@
 #!/usr/bin/env zsh
 # shellcheck shell=bash
 
+set_default_shell() {
+  local zsh_command
+
+  zsh_command=$(command -v zsh)
+
+  # Add zsh to list of available shells
+  if ! grep -q zsh /etc/shells; then
+    echo "Adding zsh to /etc/shells"
+    echo "$zsh_command" | sudo tee -a /etc/shells > /dev/null
+  fi
+
+  # Set zsh as default shell
+  if [[ ! "$SHELL" = "$zsh_command" ]]; then
+    echo "Setting zsh as the default shell"
+    chsh -s "$zsh_command" "$USER"
+  fi
+}
+
+install_ohmyzsh() {
+  local omz_dir
+
+  omz_dir="$HOME/.oh-my-zsh"
+
+  if [ ! -d "${omz_dir}" ]; then
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  fi
+}
+
+set_default_shell
+install_ohmyzsh
