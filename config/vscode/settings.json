@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "Gruvbox Dark Medium",
+  "workbench.colorTheme": "Gruvbox Material Dark",
   "editor.fontFamily": "'Fira Code', 'Source Code Pro', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
@@ -7,7 +7,6 @@
   "php.executablePath": "/usr/local/bin/php",
   "files.autoSave": "onWindowChange",
   "composer.executablePath": "/usr/local/bin/composer",
-  "workbench.activityBar.visible": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "eslint.alwaysShowStatus": true,
   "editor.formatOnSave": true,
@@ -18,7 +17,7 @@
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.fontFamily": "Fira Code",
   "terminal.integrated.fontSize": 16,
-  "terminal.integrated.shell.osx": "/bin/zsh",
+  "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "block",
   "eslint.lintTask.enable": true,
@@ -38,14 +37,28 @@
   "[dart]": {
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
-    "editor.rulers": [
-      80
-    ],
+    "editor.rulers": [80],
     "editor.selectionHighlight": false,
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "onlySnippets",
-    "editor.wordBasedSuggestions": false
+    "editor.wordBasedSuggestions": false,
+    "openTestView": ["testRunStart"]
   },
-  "github.username": "dnunez24"
+  "github.username": "dnunez24",
+  "editor.inlineSuggest.enabled": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "C_Cpp.clang_format_fallbackStyle": "Chromium",
+  "C_Cpp.clang_format_path": "/usr/local/bin/clang-format",
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "cmake.configureOnOpen": true,
+  "python.venvFolders": ["~/.local/share/virtualenvs"],
+  "redhat.telemetry.enabled": false,
+  "git.autofetch": true,
+  "editor.minimap.enabled": false,
+  "terminal.external.osxExec": "Warp.app",
+  "terminal.explorerKind": "external",
+  "workbench.activityBar.visible": false
 }
