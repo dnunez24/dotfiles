@@ -1,4 +1,8 @@
-. "${HOME}/.env"
+if [[ -f "${HOME}/.env" ]]; then
+  . "${HOME}/.env"
+fi
+
+setopt autocd
 
 export COMPOSER_HOME="$HOME/.composer"
 export GEM_HOME="$HOME/.gem"
@@ -13,8 +17,12 @@ paths=(
   "$HOME/.cargo/bin"
   # Flutter bins
   "/usr/local/opt/flutter/bin"
+  # Project node modules
+  "./node_modules/.bin"
   # Python poetry package manager
   "$HOME/.poetry/bin"
+  # Python user installed modules
+  "/Users/dnunez/Library/Python/3.9/bin"
   # PHP composer package bins
   "$COMPOSER_HOME/vendor/bin"
   # Ruby gem bins
@@ -97,13 +105,14 @@ export ZSH="$HOME/.oh-my-zsh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  akamai
+  1password
   aws
   docker
+  docker-compose
   git
-  github
-  # gpg-agent
-  poetry
+  gh
+  npm
+  vscode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -131,6 +140,8 @@ export EDITOR="code -w"
 
 export AWS_PROFILE="iamr-dotcom-snkrs-team"
 
+export PIPENV_VENV_IN_PROJECT=1
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -140,15 +151,10 @@ export AWS_PROFILE="iamr-dotcom-snkrs-team"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias zshrc="code -w $HOME/.zshrc"
-alias ohmyzsh="code -w $HOME/.oh-my-zsh"
-unalias run-help
+alias la="ls -Alp"
 
-autoload run-help ssh-passwd
-functions ssh-passwd
-# functions iscached ssh-passwd
+autoload ssh-passwd
 
 bindkey -v
 
