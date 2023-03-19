@@ -1,16 +1,12 @@
 #!/usr/bin/env zsh
 # shellcheck shell=bash
 
-set -e
-
 SOURCE_DIR="$(cd "$(dirname "$ZSH_SCRIPT")" && pwd)"
 OS_NAME="$(uname -s)"
-CATEGORY_TAG=
-OS_TAG="-t ${OS_NAME:l}"
-
-if [[ -n "$1" ]]; then
-  CATEGORY_TAG="-t ${1}"
-fi
+# shellcheck disable=SC2034
+RCUP_TAGS_ARRAY=("${@}" "${OS_NAME:l}")
+# shellcheck disable=SC2296
+RCUP_TAGS=${(j: -t :)RCUP_TAGS_ARRAY}
 
 # link dotfiles to home directory
-env RCRC="${SOURCE_DIR}/rcrc" rcup "$OS_TAG" "$CATEGORY_TAG" -v
+env RCRC="${SOURCE_DIR}/rcrc" rcup -v "-t ${RCUP_TAGS[*]}"
