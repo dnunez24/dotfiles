@@ -1,1 +1,16 @@
-/Users/dnunez/.dotfiles/oh-my-zsh/functions/ssh-passwd
+#!/usr/bin/env zsh
+# shellcheck shell=bash
+
+# Prompts to update the password for all SSH keys stored in ~/.ssh
+# 
+# Useful for bulk updating your key passwords to be in sync with
+# your OS password when changes are required by password policy
+# for example.
+function ssh-passwd() {
+  for key in ~/.ssh/id_*; do
+    if [[ ! "$key" =~ \.pub$ ]]; then
+      echo "Update password for $key"
+      ssk-keygen -p -f "$key"
+    fi
+  done
+}
