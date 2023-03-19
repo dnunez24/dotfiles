@@ -11,7 +11,11 @@ Managed by [rcm](https://thoughtbot.github.io/rcm/)
 ## Install
 
 ```sh
-$ init/bootstrap
+# Link dotfiles for the given system-type, e.g. personal or work
+./install.sh [system-type]
+
+# Run shared and OS-specific setup
+~/.bin/setup
 ```
 
 ## Update

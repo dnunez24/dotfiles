@@ -1,0 +1,140 @@
+#!/usr/bin/env zsh
+# shellcheck shell=bash
+
+set -e
+
+OS_NAME="$(uname -s)"
+SCRIPT_DIR="$( cd "$(dirname "$ZSH_SCRIPT")" && pwd )"
+DOTFILES_DIR="$HOME/.dotfiles"
+PACK_VERSION="0.2.0"
+
+is_macos() {
+  [[ "$OS_NAME" = "Darwin" ]]
+}
+
+set_os_defaults() {
+  source "macos-defaults"
+}
+
+install_os_packages() {
+  local brew_cmd
+  local global_brewfile
+  local local_brewfile
+
+  brew_cmd="$(command -v brew)"
+  global_brewfile="${HOME}/.Brewfile"
+  local_brewfile="${HOME}/.config/Brewfile"
+
+  if [[ -z "$brew_cmd" ]]; then
+    echo "Installing Homebrew package manager..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  fi
+
+  # Install bundled Homebrew packages
+  echo "Installing Homebrew packages..."
+  [[ -f "$global_brewfile" ]] && brew bundle --global
+  [[ -f "$local_brewfile" ]] && brew bundle --file="$local_brewfile"
+}
+
+install_vscode_packages() {
+  if ! which -s code; then
+    echo "VS Code CLI not available to manage extensions"
+    return 1
+  fi
+
+  if [[ ! -e "$1" ]]; then
+    echo "VS Code extension manifest not found"
+    return 1
+  fi
+
+  # Install VS Code editor packages
+  cat "$1" | xargs -L1 code --force --install-extension
+
+  return 0
+}
+
+install_vim_plugins() {
+  # Install pack to manage vim plugins (https://github.com/maralla/pack)
+  # TODO: Set URL var based on platform (and arch?)
+  local pack_url="https://github.com/maralla/pack/releases/download/v${PACK_VERSION}/pack-v${PACK_VERSION}-x86_64-apple-darwin.tar.gz"
+  local pack_archive="/tmp/pack.tar.gz"
+
+  curl -sSL $pack_url -o $pack_archive
+  tar -vxf $pack_archive -C /usr/local/bin pack
+  rm $pack_archive
+
+  if ! which -s pack; then
+    echo "pack executable unavailable"
+    return 1
+  fi
+
+  # Install vim plugins
+  pack install
+
+  return 0
+}
+
+install_npm_packages() {
+  #   NPM_PACKAGE_MANIFEST="${HOME}/.config/npm/packages"
+  if ! which -s npm; then
+    echo "npm executable unavailable"
+    return 1
+  fi
+
+  if [[ ! -e "$1" ]]; then
+    echo "npm package manifest not found"
+    return 1
+  fi
+
+  # Update npm
+  echo "Update global npm version"
+  npm install -g npm
+
+  # Install npm global packages
+  echo "Install global npm packages"
+  cat "${NPM_PKGS}" | xargs -L1 npm install --global
+
+  return 0
+}
+
+install_vscode_settings() {
+  local config_dir
+  local user_dir
+
+  config_dir="${HOME}/.config/vscode"
+  user_dir="${HOME}/Library/Application Support/Code/User"
+
+  if [ -d "$user_dir" ]; then
+    ln -snF "${config_dir}/settings.json" "${user_dir}/settings.json"
+    ln -snF "${config_dir}/keybindings.json" "${user_dir}/keybindings.json"
+    ln -snF "${config_dir}/snippets" "${user_dir}/snippets"
+  fi
+}
+
+configure_terminal() {
+  open "${HOME}/.config/Gruvbox\ (Dark).terminal"
+  defaults write com.apple.terminal "Default Window Settings" "Gruvbox (Dark)"
+}
+
+is_macos || exit 1
+
+# Ask for the administrator password upfront
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until script has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+# xcode-select --install
+# xcodebuild -runFirstLaunch
+# install_os_packages
+# install_npm_packages "$NPM_PACKAGE_MANIFEST" || exit $?
+# install_vscode_packages "$VSCODE_PACKAGE_MANIFEST" || exit $?
+# install_vscode_settings
+# install_vim_plugins || exit $?
+# # set_os_defaults "$PLATFORM" || exit $?
+# install_ohmyzsh
+# set_default_shell
+
+# install_npm_packages "$NPM_PACKAGE_MANIFEST" || exit $?
+# install_vscode_packages "$VSCODE_PACKAGE_MANIFEST" || exit $?
+# install_vim_plugins || exit $?

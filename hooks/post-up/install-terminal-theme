@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-open ~/.Gruvbox\ (Dark).terminal
-defaults write com.apple.terminal "Default Window Settings" "Gruvbox (Dark)"

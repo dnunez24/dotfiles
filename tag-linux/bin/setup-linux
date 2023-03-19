@@ -1,0 +1,22 @@
+#!/usr/bin/env zsh
+# shellcheck shell=bash
+
+linux_distro() {
+  local release_info="/etc/os-release"
+
+  if [[ -f "$release_info" ]]; then
+    while IFS="=" read -r key value; do
+      [[ "$key" = "ID" ]] && return "$value"
+    done < "$release_info"
+  fi
+
+  return "unknown"
+}
+
+install_alpine_linux_packages() {
+  # apk add < packages_manifest
+}
+
+install_linux_packages() {
+
+}

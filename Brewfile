@@ -18,7 +18,6 @@ brew 'git-open'
 brew 'gpg'
 brew 'httpie'
 brew 'jq'
-brew "lastpass-cli"
 brew 'mas'
 brew 'node'
 brew 'openssh'
@@ -34,6 +33,7 @@ brew 'vim'
 # Install packages from casks
 cask_args appdir: '/Applications'
 
+cask '1password'
 cask 'charles'
 cask 'cyberduck'
 cask 'docker'
@@ -56,23 +56,17 @@ cask 'font-source-code-pro'
 cask 'font-source-sans-pro'
 cask 'font-source-serif-pro'
 cask 'gitup'
-cask "graphiql"
 cask 'java' unless system '/usr/libexec/java_home --failfast'
 cask 'kaleidoscope'
-cask "ngrok"
 cask 'postman'
-cask 'sequel-pro'
 cask 'visual-studio-code'
 
 # Install App Store apps
 mas 'Keynote', id: 409183694
 mas "LastPass", id: 926036361
-mas "LittleIpsum", id: 405772121
 mas 'Magnet', id: 441258766
-mas 'Monit', id: 1014850245
 mas 'Numbers', id: 409203825
 mas 'Pages', id: 409201541
 mas 'Slack', id: 803453959
-mas 'TickTick', id: 966085870
 mas 'The Unarchiver', id: 425424353
 mas 'Xcode', id: 497799835

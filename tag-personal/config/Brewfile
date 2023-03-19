@@ -1,29 +1,17 @@
 tap 'cloudflare/cloudflare'
 tap 'dart-lang/dart'
-tap 'shopify/shopify'
 tap 'thoughtbot/formulae'
 
-brew 'doctl'
-brew 'r'
-
 cask 'appzapper'
-cask 'dropbox'
+cask 'cloudflare-warp'
 cask 'google-chrome'
-cask 'google-backup-and-sync'
 cask 'kindlegen'
-cask 'rstudio'
-cask 'sketch'
 cask 'yubico-yubikey-manager'
 cask 'yubico-yubikey-personalization-gui'
 cask 'yubico-yubikey-piv-manager'
 
-mas 'iPhoto', id: 408981381
-mas 'Todoist', id: 585829637
 mas 'DaisyDisk', id: 411643860
 mas 'Kindle', id: 405399194
 mas 'Logic Pro X', id: 634148309
 mas 'Paprika Recipe Manager', id: 451907568
 mas 'Transmit', id: 403388562
-mas 'Trello', id: 1278508951
-mas 'Ulysses', id: 1225570693
-mas 'Workspaces', id: 1219826448

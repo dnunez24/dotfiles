@@ -1,0 +1,2 @@
+TAGS="darwin"
+EXCLUDES="README.md LICENSE install.sh"
