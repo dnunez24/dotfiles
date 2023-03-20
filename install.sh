@@ -1,12 +1,37 @@
 #!/usr/bin/env zsh
 # shellcheck shell=bash
 
-SOURCE_DIR="$(cd "$(dirname "$ZSH_SCRIPT")" && pwd)"
+SCRIPT_NAME="${0}"
 OS_NAME="$(uname -s)"
-# shellcheck disable=SC2034
-RCUP_TAGS_ARRAY=("${@}" "${OS_NAME:l}")
-# shellcheck disable=SC2296
-RCUP_TAGS=${(j: -t :)RCUP_TAGS_ARRAY}
 
-# link dotfiles to home directory
-env RCRC="${SOURCE_DIR}/rcrc" rcup -v "-t ${RCUP_TAGS[*]}"
+usage() {
+  cat <<- EOF
+
+$(basename "${SCRIPT_NAME}") [-t TAG] [FILE]
+
+    Installs dotfiles using rcm: https://thoughtbot.github.io/rcm/
+
+    Any options or positional parameters passed to this script
+    will be forwarded to the rcup command that does the install.
+
+    Typical use is to pass one or more tags.
+
+    You can install only certain files by specifying files as
+    positional parameters to the script.
+EOF
+  exit 1
+}
+
+install() {
+  # link dotfiles to home directory
+  rcup -K -v -t "${OS_NAME:l}" "${@}" rcrc
+  rcup -v -t "${OS_NAME:l}" "${@}"
+}
+
+while getopts ':h' opt; do
+  case $opt in
+    h) usage;;
+    *) install "${@}";;
+  esac
+done
+
