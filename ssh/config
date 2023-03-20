@@ -13,6 +13,6 @@ Host *
   TCPKeepAlive yes
 
 Host github.personal
-    Hostname github.com
-    IdentityFile ~/.ssh/id_personal.pub
-    IdentitiesOnly yes
+  Hostname github.com
+  IdentityFile ~/.ssh/id_personal.pub
+  IdentitiesOnly yes
