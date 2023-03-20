@@ -23,28 +23,14 @@ cd ~/.dotfiles && ./install.sh [tags]
 
 ## Update
 
-For updating a personal MacOS system, run the following command from the the root directory of this repo
+The `~/.rcrc` file gets linked during install and has most of the configuration  run the following command from the the root directory of this repo
 
 ```
-env RCRC="./tag-personal/rcrc" rcup 
+cd ~/.dotfiles && ./update.sh personal
 ```
 
-For updating a work MacOS system, run the following command from the the root directory of this repo
+## Environment Specific Customization
 
-```
-env RCRC="./tag-work/rcrc" rcup 
-```
+### Shell Environment Variables
 
-## Customize
-
-TODO
-
-## Secrets
-
-### Environment Variables
-
-Some secrets may need to be stored in environment variables to be loaded by the shell. You can add these to a file in `~/.config/fish/conf.d` which is not included here for reasons which should be obvious. The file name must end in `.fish`. You might name it something like `secrets.fish`.
-
-### Other Files
-
-Other secret files, like SSH private keys, must be copied over manually from wherever you're securely storing them. Place them in the appropriate folders.
+Some secrets may need to be stored in environment variables to be loaded by the shell. You can add these to a file in `~/.env` which is not included here for reasons which should be obvious. 
