@@ -60,5 +60,7 @@
   "editor.minimap.enabled": false,
   "terminal.external.osxExec": "Warp.app",
   "terminal.explorerKind": "external",
-  "workbench.activityBar.visible": false
+  "workbench.activityBar.visible": false,
+  "dotfiles.repository": "dnunez24/dotfiles",
+  "dotfiles.targetPath": "~/.dotfiles"
 }
