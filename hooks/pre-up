@@ -29,5 +29,10 @@ install_ohmyzsh() {
   fi
 }
 
+install_prompt() {
+  curl -fsSL https://starship.rs/install.sh | sh -- -y
+}
+
+install_prompt
 set_default_shell
 install_ohmyzsh
