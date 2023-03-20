@@ -8,26 +8,33 @@ TODO
 
 Managed by [rcm](https://thoughtbot.github.io/rcm/)
 
-## Install
+## Installing & Updating
 
 ```sh
 # Clone this repo to the dotfiles location on your OS
 git clone https://github.com/dnunez24/dotfiles.git ~/.dotfiles
 
 # Install dotfiles for the given tags, e.g. personal or work
-cd ~/.dotfiles && ./install.sh [tags]
+cd ~/.dotfiles && ./install.sh [-t TAG]
 
 # Run the setup script to bootstrap the OS
 ~/.bin/setup
 ```
 
-## Update
+The `install.sh` is idempotent so it can also be used to update the dotfile links.
 
-The `~/.rcrc` file gets linked during install and has most of the configuration  run the following command from the the root directory of this repo
+## Adding a new dotfile
 
+You can use the `mkrc` command to create a new dotfile as in the example below:
+
+```sh
+mkrc ~/.my-dotfile
+
+# Add a dotfile and associate with a tag
+mkrc -t TAG_NAME ~/.my-dotfile
 ```
-cd ~/.dotfiles && ./update.sh personal
-```
+
+This will create the file in the dotfiles directory and then symlink it to the user home directory.
 
 ## Environment Specific Customization
 
