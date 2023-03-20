@@ -1,0 +1,19 @@
+[default]
+output = json
+region = us-east-1
+
+[profile dotcom-snkrs]
+region = us-east-1
+output = json
+
+[profile dotcom-snkrs-test]
+region = us-east-1
+output = json
+
+[profile sqat-test-admin]
+region = us-east-1
+output = json
+
+[profile sqat-prod-admin]
+region = us-east-1
+output = json
