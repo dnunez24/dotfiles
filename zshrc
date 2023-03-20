@@ -1,36 +1,58 @@
+# Load environment variables file
 if [[ -f "${HOME}/.env" ]]; then
   . "${HOME}/.env"
 fi
 
+cmd_exists() {
+  command -v "$1" >/dev/null 2>&1
+}
+
+# Set zsh opts
 setopt autocd
 
 export COMPOSER_HOME="$HOME/.composer"
 export GEM_HOME="$HOME/.gem"
+# TODO: only do this on darwin systems
+export CHARLES_HOME="/Applications/Charles.app/Contents/MacOS"
 
 # If you come from bash you might have to change your $PATH.
 paths=(
   # dotfiles bins
   "$HOME/.bin"
+
   # Homebrew package bins
   "/usr/local/sbin"
+
   # Rust bins
   "$HOME/.cargo/bin"
+
   # Flutter bins
   "/usr/local/opt/flutter/bin"
+
   # Project node modules
   "./node_modules/.bin"
+
   # Python poetry package manager
   "$HOME/.poetry/bin"
+
   # Python user installed modules
   "/Users/dnunez/Library/Python/3.9/bin"
+
   # PHP composer package bins
   "$COMPOSER_HOME/vendor/bin"
+
   # Ruby gem bins
   "$GEM_HOME/bin"
+
   # Dart bins
   "$HOME/.pub-cache/bin"
+
   # Visual Studio Code program
   "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+  # Charles proxy CLI
+  "$CHARLES_HOME"
+
   # Default paths last in lookup chain
   "$PATH"
 )
@@ -138,6 +160,7 @@ export LC_CTYPE="en_US.UTF-8"
 # Set default editor to VS Code
 export EDITOR="code -w"
 
+# TODO: add to a tag specific config or load from .env
 export AWS_PROFILE="iamr-dotcom-snkrs-team"
 
 export PIPENV_VENV_IN_PROJECT=1
@@ -158,4 +181,16 @@ autoload ssh-passwd
 
 bindkey -v
 
-eval "$(starship init zsh)"
+# Initialize starship shell prompt
+if cmd_exists starship; then
+  eval "$(starship init zsh)"
+fi
+
+if cmd_exists nodenv; then
+  eval "$(nodenv init -)"
+fi
+
+# Initialize pyenv for managing Python versions
+if cmd_exists pyenv; then
+  eval "$(pyenv init -)"
+fi
