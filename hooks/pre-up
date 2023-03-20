@@ -25,12 +25,20 @@ install_ohmyzsh() {
   omz_dir="$HOME/.oh-my-zsh"
 
   if [ ! -d "${omz_dir}" ]; then
+    echo "Installing Oh My Zsh"
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   fi
 }
 
 install_prompt() {
-  curl -fsSL https://starship.rs/install.sh | sh -- -y
+  local starship_cmd
+
+  starship_cmd=$(command -v starship)
+
+  if [[ -z "$starship_cmd" ]]; then
+    echo "Installing Starship shell prompt"
+    curl -fsSL https://starship.rs/install.sh | sh -s -- -y >/dev/null
+  fi
 }
 
 install_prompt
