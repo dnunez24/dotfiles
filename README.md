@@ -11,10 +11,13 @@ Managed by [rcm](https://thoughtbot.github.io/rcm/)
 ## Install
 
 ```sh
-# Link dotfiles for the given system-type, e.g. personal or work
-./install.sh [system-type]
+# Clone this repo to the dotfiles location on your OS
+git clone https://github.com/dnunez24/dotfiles.git ~/.dotfiles
 
-# Run shared and OS-specific setup
+# Install dotfiles for the given tags, e.g. personal or work
+cd ~/.dotfiles && ./install.sh [tags]
+
+# Run the setup script to bootstrap the OS
 ~/.bin/setup
 ```
 
