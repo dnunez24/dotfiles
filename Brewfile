@@ -1,4 +1,5 @@
 # Add Homebrew taps
+tap '1password/1password-cli'
 tap 'homebrew/bundle'
 tap 'homebrew/cask-drivers'
 tap 'homebrew/cask-fonts'
@@ -34,6 +35,7 @@ brew 'vim'
 cask_args appdir: '/Applications'
 
 cask '1password'
+cask '1password-cli'
 cask 'charles'
 cask 'cyberduck'
 cask 'docker'
