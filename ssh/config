@@ -1,15 +1,13 @@
 Host *
-    AddKeysToAgent yes
-    ConnectTimeout 0
-    ForwardX11 no
-    Include "~/.ssh/config.local"
-    PreferredAuthentications publickey,password
-    PubkeyAuthentication yes
-    Protocol 2,1
-    ServerAliveCountMax 5
-    ServerAliveInterval 60
-    StrictHostKeyChecking ask
-    TCPKeepAlive yes
-
-Host *
+  AddKeysToAgent yes
+  ConnectTimeout 0
+  ForwardX11 no
   IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+  Include "~/.ssh/config.local"
+  PreferredAuthentications publickey,password
+  PubkeyAuthentication yes
+  Protocol 2,1
+  ServerAliveCountMax 5
+  ServerAliveInterval 60
+  StrictHostKeyChecking ask
+  TCPKeepAlive yes
