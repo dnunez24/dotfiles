@@ -75,6 +75,7 @@
 [commit]
 
   verbose = true
+  gpgsign = true
 
 [core]
 
@@ -177,6 +178,14 @@
   smudge = git lfs smudge %f
   required = true
 
+[gpg]
+
+  format = ssh
+
+[gpg "ssh"]
+
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
 [help]
 
   # Automatically correct and execute mistyped commands
@@ -224,7 +233,6 @@
 
 [user]
   name = Dave Nunez
-  email = david.nunez@alumni.stanford.edu
-  # signingkey = 1F2A2DF0
+
 [pull]
 	rebase = true
