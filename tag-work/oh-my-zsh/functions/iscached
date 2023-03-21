@@ -5,7 +5,7 @@ PRAGMA_HEADER="Pragma: akamai-x-cache-on, akamai-x-cache-remote-on, akamai-x-che
 PRAGMA_AUTH_HEADER="PragmaAuth: ${AKAMAI_PRAGMA_AUTH_TOKEN}"
 
 if [[ -z "$1" ]]; then
-  echo "A URL arg is required" && exit 1
+  echo "A URL arg is required" && return 1
 fi
 
 curl -I -H "$PRAGMA_HEADER" -H "$PRAGMA_AUTH_HEADER" "$1"

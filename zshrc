@@ -2,9 +2,7 @@
 setopt autocd
 
 # Load environment variables file
-if [[ -f "${HOME}/.env" ]]; then
-  . "${HOME}/.env"
-fi
+[[ -f "${HOME}/.env" ]] && . "${HOME}/.env"
 
 export COMPOSER_HOME="$HOME/.composer"
 export GEM_HOME="$HOME/.gem"
@@ -178,7 +176,8 @@ export PIPENV_VENV_IN_PROJECT=1
 alias zshrc="code -w $HOME/.zshrc"
 alias la="ls -Alp"
 
-autoload ssh-passwd
+# Autoload all custom functions
+autoload -Uz $ZSH/functions/**/*(-.:t)
 
 bindkey -v
 
