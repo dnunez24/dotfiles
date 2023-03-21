@@ -43,8 +43,6 @@ bin_dirs=(
 
   # Charles proxy CLI
   "$CHARLES_HOME"
-
-  # /Applications/Visual Studio Code.app/Contents/Resources/app/bin
 )
 
 for dir in ${bin_dirs[@]}; do
