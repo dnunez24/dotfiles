@@ -1,0 +1,8 @@
+[user]
+
+  email = david.nunez@alumni.stanford.edu
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOAiPsqTY8DWEomJVuNMxy9GFbRTLhORifgyKHRYlvKJ
+
+[remote.origin]
+
+  url=git@github.personal:dnunez24/dotfiles.git
