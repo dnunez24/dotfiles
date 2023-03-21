@@ -221,6 +221,10 @@
 
   list = "%C(yellow)%h %C(blue)%ad %C(cyan)%<(20,trunc)%an %C(white)%s%C(red)%d"
 
+[pull]
+
+	rebase = true
+
 [push]
 
   default = current
@@ -232,7 +236,5 @@
   autosquash = true
 
 [user]
-  name = Dave Nunez
 
-[pull]
-	rebase = true
+  name = Dave Nuñez
