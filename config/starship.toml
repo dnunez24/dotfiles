@@ -1,14 +1,173 @@
+# Get editor completions based on the config schema
+"$schema" = "https://starship.rs/config-schema.json"
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+palette = "gruvbox"
+
+[palettes.gruvbox]
+black         = "#282828"
+red           = "#ea6962"
+green         = "#a9b665"
+blue          = "#7daea3"
+yellow        = "#d8a657"
+purple        = "#d3869b"
+cyan          = "#89b482"
+white         = "#d4be98"
+# bright-black  = ""
+# bright-red    = ""
+# bright-green  = ""
+# bright-blue   = ""
+# bright-yellow = ""
+# bright-purple = ""
+# bright-cyan   = ""
+# bright-white  = ""
+
 [aws]
-disabled = true
+# disabled = true
+symbol = "  "
 
 [battery]
 disabled = true
 
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
 [conda]
+# disabled = true
+symbol = " "
+
+[dart]
+symbol = " "
+
+[directory]
+read_only = " "
+
+[docker_context]
+symbol = " "
+
+# [dotnet]
+# disabled = true
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[gcloud]
 disabled = true
 
-[dotnet]
-disabled = true
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = "⌘ "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[meson]
+symbol = "喝 "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[os]
+disabled = false
+
+[os.symbols]
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "﯑ "
+Gentoo = " "
+HardenedBSD = "ﲊ "
+Illumos = " "
+Linux = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = " "
+openSUSE = " "
+OracleLinux = " "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = " "
+Solus = "ﴱ "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = " "
 
 [package]
-disabled = true
+symbol = " "
+
+[pijul_channel]
+symbol = "🪺 "
+
+[python]
+symbol = " "
+
+[rlang]
+symbol = "ﳒ "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[spack]
+symbol = "🅢 "
