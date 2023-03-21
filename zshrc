@@ -1,24 +1,23 @@
+# Set zsh opts
+setopt autocd
+
 # Load environment variables file
 if [[ -f "${HOME}/.env" ]]; then
   . "${HOME}/.env"
 fi
 
-cmd_exists() {
-  command -v "$1" >/dev/null 2>&1
-}
-
-# Set zsh opts
-setopt autocd
-
 export COMPOSER_HOME="$HOME/.composer"
 export GEM_HOME="$HOME/.gem"
-# TODO: only do this on darwin systems
-export CHARLES_HOME="/Applications/Charles.app/Contents/MacOS"
+
+if [[ "$(uname -a)" =~ "darwin" ]]; then
+  export CHARLES_HOME="/Applications/Charles.app/Contents/MacOS"
+fi
 
 # If you come from bash you might have to change your $PATH.
-paths=(
+paths=()
+bin_dirs=(
   # dotfiles bins
-  "$HOME/.bin"
+  "$HOME/bin"
 
   # Homebrew package bins
   "/usr/local/sbin"
@@ -29,14 +28,11 @@ paths=(
   # Flutter bins
   "/usr/local/opt/flutter/bin"
 
-  # Project node modules
-  "./node_modules/.bin"
-
   # Python poetry package manager
   "$HOME/.poetry/bin"
 
   # Python user installed modules
-  "/Users/dnunez/Library/Python/3.9/bin"
+  "$HOME/Library/Python/3.9/bin"
 
   # PHP composer package bins
   "$COMPOSER_HOME/vendor/bin"
@@ -44,18 +40,23 @@ paths=(
   # Ruby gem bins
   "$GEM_HOME/bin"
 
-  # Dart bins
+  # Dart package bins
   "$HOME/.pub-cache/bin"
-
-  # Visual Studio Code program
-  "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
   # Charles proxy CLI
   "$CHARLES_HOME"
 
-  # Default paths last in lookup chain
-  "$PATH"
+  # /Applications/Visual Studio Code.app/Contents/Resources/app/bin
 )
+
+for dir in ${bin_dirs[@]}; do
+  if [[ -d "${dir}" ]]; then
+    paths+=("${dir}")
+  fi
+done
+
+# Default paths last in lookup chain
+paths+=("$PATH")
 
 export PATH=${(j/:/)paths}
 
@@ -180,6 +181,10 @@ alias la="ls -Alp"
 autoload ssh-passwd
 
 bindkey -v
+
+cmd_exists() {
+  command -v "$1" >/dev/null 2>&1
+}
 
 # Initialize starship shell prompt
 if cmd_exists starship; then
