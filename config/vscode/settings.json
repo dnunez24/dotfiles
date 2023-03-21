@@ -1,8 +1,8 @@
 {
   "workbench.colorTheme": "Gruvbox Material Dark",
-  "editor.fontFamily": "'Hack Nerd Font', 'Fira Code', 'Source Code Pro', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "'FiraCode Nerd Font', 'Source Code Pro', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
-  "editor.fontSize": 14,
+  "editor.fontSize": 16,
   "editor.tabSize": 2,
   "php.executablePath": "/usr/local/bin/php",
   "files.autoSave": "onWindowChange",
@@ -53,5 +53,6 @@
   "terminal.explorerKind": "external",
   "workbench.activityBar.visible": false,
   "dotfiles.repository": "dnunez24/dotfiles",
-  "dotfiles.targetPath": "~/.dotfiles"
+  "dotfiles.targetPath": "~/.dotfiles",
+  "terminal.integrated.fontFamily": "'FiraCode Nerd Font'"
 }
