@@ -1,4 +1,3 @@
-#!/usr/bin/env zsh
 # shellcheck shell=bash
 
 PRAGMA_HEADER="Pragma: akamai-x-cache-on, akamai-x-cache-remote-on, akamai-x-check-cacheable, akamai-x-get-cache-key, akamai-x-get-true-cache-key"
