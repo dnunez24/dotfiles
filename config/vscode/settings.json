@@ -20,7 +20,6 @@
   "eslint.lintTask.enable": true,
   "git.autoStash": true,
   "dev.containers.workspaceMountConsistency": "delegated",
-  "prettier.requireConfig": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
@@ -54,5 +53,9 @@
   "workbench.activityBar.visible": false,
   "dotfiles.repository": "dnunez24/dotfiles",
   "dotfiles.targetPath": "~/.dotfiles",
-  "terminal.integrated.fontFamily": "'FiraCode Nerd Font'"
+  "terminal.integrated.fontFamily": "'FiraCode Nerd Font'",
+  "prettier.requireConfig": true,
+  "prettier.singleQuote": true,
+  "prettier.useEditorConfig": false,
+  "githubPullRequests.pullBranch": "never"
 }
