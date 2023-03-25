@@ -21,7 +21,13 @@ cd ~/.dotfiles && ./install.sh [-t TAG]
 ~/.bin/setup
 ```
 
-The `install.sh` is idempotent so it can also be used to update the dotfile links.
+The `install.sh` is idempotent so it can be run again if you want to change the tags for a given system. The tags get installed into the `RCRC` config file at `~/.rcrc` so that future updates don't require the tags to be passed explicitly.
+
+To update the dotfiles, you can simply run:
+
+```sh
+rcup -v
+```
 
 ## Adding a new dotfile
 
