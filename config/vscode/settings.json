@@ -57,5 +57,8 @@
   "prettier.requireConfig": true,
   "prettier.singleQuote": true,
   "prettier.useEditorConfig": false,
-  "githubPullRequests.pullBranch": "never"
+  "githubPullRequests.pullBranch": "never",
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  }
 }
