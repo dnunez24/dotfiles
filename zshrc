@@ -2,7 +2,8 @@
 setopt autocd
 
 # Load environment variables file
-[[ -f "${HOME}/.env" ]] && . "${HOME}/.env"
+[[ -f "$HOME/.env" ]] && . "$HOME/.env"
+# c072ff992f9ebac36bc0ebb5b511a87f
 
 export COMPOSER_HOME="$HOME/.composer"
 export GEM_HOME="$HOME/.gem"
@@ -13,6 +14,7 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 paths=()
+
 bin_dirs=(
   # dotfiles bins
   "$HOME/bin"
@@ -184,15 +186,13 @@ cmd_exists() {
 }
 
 # Initialize starship shell prompt
-if cmd_exists starship; then
-  eval "$(starship init zsh)"
-fi
+cmd_exists starship && eval "$(starship init zsh)"
 
-if cmd_exists nodenv; then
-  eval "$(nodenv init -)"
-fi
+# Initialize nodenv for managing Node.js versions
+cmd_exists nodenv && eval "$(nodenv init -)"
 
 # Initialize pyenv for managing Python versions
-if cmd_exists pyenv; then
-  eval "$(pyenv init -)"
-fi
+cmd_exists pyenv && eval "$(pyenv init -)"
+
+# Initialize direnv for loading .envrc / .env files
+cmd_exists direnv && eval "$(direnv hook zsh)"
