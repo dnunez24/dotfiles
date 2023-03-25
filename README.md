@@ -1,4 +1,4 @@
-# David Nunez's Dotfiles
+# My Dotfiles
 
 These are my dotfiles. There are many like them, but these ones are mine.
 
