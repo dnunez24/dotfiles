@@ -2,7 +2,13 @@
 
 These are my dotfiles. There are many like them, but these ones are mine.
 
-Managed by [rcm](https://thoughtbot.github.io/rcm/)
+The dotfiles are managed by [rcm](https://thoughtbot.github.io/rcm/)
+
+## Requirements
+
+* [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) must be installed and in your shell `$PATH`
+* [rcm](https://github.com/thoughtbot/rcm#installation) must be installed and in your shell `$PATH`
+
 
 ## Installing & Updating
 
