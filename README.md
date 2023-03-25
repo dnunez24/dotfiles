@@ -2,10 +2,6 @@
 
 These are my dotfiles. There are many like them, but these ones are mine.
 
-## Overview
-
-TODO
-
 Managed by [rcm](https://thoughtbot.github.io/rcm/)
 
 ## Installing & Updating
