@@ -1,3 +1,0 @@
-TAGS="linux"
-EXCLUDES="README.md LICENSE install.sh"
-UNDOTTED="bin"
