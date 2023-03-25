@@ -1,0 +1,3 @@
+TAGS=""
+EXCLUDES="README.md LICENSE install.sh rcrc"
+UNDOTTED="bin"
