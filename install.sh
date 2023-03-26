@@ -56,7 +56,11 @@ install() {
   REPLACEMENT="\"$TAGS\""
 
   if [[ -f $DEFAULT_RCRC ]]; then
+    echo
     echo "Updating $DEFAULT_RCRC with your tags..."
+    echo
+    echo "${(j/\n/)TAGS}"
+    echo
     # shellcheck disable=SC2086
     sed -Ei "" "/$MATCH/s/$TO_REPLACE/$REPLACEMENT/" $DEFAULT_RCRC
   fi
