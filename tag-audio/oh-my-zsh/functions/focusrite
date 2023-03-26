@@ -1,0 +1,38 @@
+#!/bin/zsh
+# shellcheck shell=bash
+
+DOMAIN="system"
+SERVICE="${1:-com.focusrite.ControlServer}"
+PLIST="${2:-/Library/LaunchDaemons/$SERVICE.plist}"
+
+usage() {
+  cat <<-EOF
+
+focusrite COMMAND [SERVICE] [PLIST]
+
+
+    COMMANDS:
+
+    restart - restarts the Focusrite Control Server
+
+EOF
+
+  return 1
+}
+
+# Restarts the Focusrite Control Server as explained in this help article:
+# https://support.focusrite.com/hc/en-gb/articles/115001661729-Focusrite-Control-is-showing-No-Hardware-Connected-
+restart() {
+  sudo launchctl bootout $DOMAIN/$SERVICE
+  sudo launchctl bootstrap system $PLIST
+}
+
+case "$1" in
+restart)
+  shift
+  restart "$@"
+  ;;
+*)
+  usage
+  ;;
+esac
