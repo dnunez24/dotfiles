@@ -8,5 +8,5 @@
 
 for key in ~/.ssh/id_*.pub; do
   echo "Update password for $key"
-  ssh-keygen -p -f "$key"
+  ssh-keygen -p -f "${key%.pub}"
 done
