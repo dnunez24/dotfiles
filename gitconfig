@@ -88,7 +88,6 @@ attributesfile = ~/.config/git/attributes
 excludesfile = ~/.config/git/ignore
 hooksPath = ~/.config/git/hooks
 
-# pager = "diff-so-fancy | less --tabs=4 -RFXS"
 pager = delta
 
 # Treat spaces before tabs and all kinds of trailing whitespace as an error
@@ -212,6 +211,7 @@ smudge = git media smudge %f
 clean = git lfs clean %f
 smudge = git lfs smudge %f
 required = true
+process = git-lfs filter-process
 
 [gpg]
 
@@ -237,7 +237,6 @@ defaultBranch = main
 
 [interactive]
 
-# diffFilter = "diff-so-fancy --patch"
 diffFilter = delta --color-only --features=interactive
 
 [merge]
@@ -256,10 +255,6 @@ trustexitcode = true
 [mergetool "vscode"]
 
 cmd = code --wait --reuse-window $MERGED
-
-[pager]
-
-# diff = "diff-so-fancy | less --tabs=4 -RFXS --pattern '^(Date|added|deleted|modified): '"
 
 [pretty]
 

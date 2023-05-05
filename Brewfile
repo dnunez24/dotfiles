@@ -8,6 +8,7 @@ tap 'homebrew/core'
 tap 'thoughtbot/formulae'
 
 # Install packages from Homebrew core
+brew 'adr-tools'
 brew 'awscli'
 brew 'bash'
 brew 'bats'
