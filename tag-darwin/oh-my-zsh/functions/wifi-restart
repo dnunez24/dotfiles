@@ -1,0 +1,7 @@
+# shellcheck shell=bash
+#
+# Restart the Wi-Fi connection
+networksetup -setairportpower en0 off
+sleep 10
+networksetup -setairportpower en0 on
+return $?
