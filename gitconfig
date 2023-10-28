@@ -51,6 +51,7 @@
   pt = push --tags
   # add remote origin tracking branch master
   raom = remote add origin main
+  recent = ls -n 10
   rename = branch -m
   ri = rebase --interactive
   rs = reset
@@ -87,10 +88,8 @@
   excludesfile = ~/.config/git/ignore
   hooksPath = ~/.config/git/hooks
 
-  pager = ""
-
-  [pager]
-    dsf = "diff-so-fancy | less --tabs=4 -RFXS --pattern '^(Date|added|deleted|modified): '"
+  # pager = "diff-so-fancy | less --tabs=4 -RFXS"
+  pager = delta
 
   # Treat spaces before tabs and all kinds of trailing whitespace as an error
   # [default] trailing-space: looks for spaces at the end of a line
@@ -143,6 +142,16 @@
 [credential]
 
   helper = osxkeychain
+
+[delta]
+
+  side-by-side = true
+  line-numbers = true
+  syntax-theme = gruvbox-light
+
+[delta "interactive"]
+
+  keep-plus-minus-markers = false
 
 [diff]
 
@@ -200,6 +209,11 @@
   templateDir = ~/.config/git/templates
 	defaultBranch = main
 
+[interactive]
+
+  # diffFilter = "diff-so-fancy --patch"
+  diffFilter = delta --color-only --features=interactive
+
 [merge]
 
   tool = vscode
@@ -216,6 +230,10 @@
 [mergetool "vscode"]
 
   cmd = code --wait --reuse-window $MERGED
+
+[pager]
+
+  # diff = "diff-so-fancy | less --tabs=4 -RFXS --pattern '^(Date|added|deleted|modified): '"
 
 [pretty]
 
