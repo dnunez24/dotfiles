@@ -1,257 +1,284 @@
 [alias]
 
-  a = add
-  # modify the previous commit (including message)
-  amend = commit -a --amend
-  # add via interactive patch mode
-  ap = add -p
-  br = branch
-  # show all branches (including remotes)
-  bra = branch -a
-  c = commit
-  # Amend the previous commit
-  ca = commit --amend
-  # Create new branch and checkout
-  cb = checkout -b
-  cl = clone
-  # Cleanup git files (but bail early if not needed)
-  clean = gc --auto
-  # Commit with intent to rebase with autosquash
-  cf = commit --fixup
-  # Commit with short message
-  cm = commit -m
-  # Commit with intent to rebase with autosquash (plus a message)
-  cms = commit --squash -m
-  co = checkout
-  cp = cherry-pick
-  # Commit with intent to rebase with autosquash
-  cs = commit --squash
-  dt = difftool
-  # diff staged changes against HEAD (or given ref)
-  dc = diff --cached
-  dsf = "diff --color"
-  # Add staged files to the previous commit without changing the message
-  forgot = commit --amend --no-edit
-  # show commit history as a graph
-  graph = log --graph --oneline --decorate --date=relative --all
-  # reset to a clean working directory and index (changes discarded)
-  hard = reset --hard
-  # show the last commit from the log
-  last = log -1 HEAD
-  # list aliases
-  la = "!git config -l | grep alias | cut -c 7-"
-  ls = log --pretty=list --date=short --no-merges
-  mt = mergetool
-  p = push
-  # generate output for a patch
-  patch = !git --no-pager diff --no-color
-  pr = pull --rebase
-  pf = push --force-with-lease
-  po = remote prune origin
-  pt = push --tags
-  # add remote origin tracking branch master
-  raom = remote add origin main
-  recent = ls -n 10
-  rename = branch -m
-  ri = rebase --interactive
-  rs = reset
-  rt = remote -v
-  sa = stash apply
-  # adds all changes including untracked files and creates a commit
-  save  = "!git add -A && git commit -m 'WIP'"
-  sl = stash list
-  ss = stash save
-  ssu = stash save -u
-  # show succinct status
-  st = status -s
-  # resets the previous commit, but keeps all the changes from that commit in the working directory
-  undo = reset HEAD~1 --mixed
-  # removes a file or files from the index (unstages it)
-  unstage = reset HEAD --
-  unwip = "!git reset --soft HEAD~1 && git unstage"
-  viz = !gitup
-  # commits only tracked changes with the WIP message
-  wip = commit -am 'WIP'
+a = add
+# modify the previous commit (including message)
+amend = commit -a --amend
+# add via interactive patch mode
+ap = add -p
+br = branch
+# show all branches (including remotes)
+bra = branch -a
+c = commit
+# Amend the previous commit
+ca = commit --amend
+# Create new branch and checkout
+cb = checkout -b
+cl = clone
+# Cleanup git files (but bail early if not needed)
+clean = gc --auto
+# Commit with intent to rebase with autosquash
+cf = commit --fixup
+# Commit with short message
+cm = commit -m
+# Commit with intent to rebase with autosquash (plus a message)
+cms = commit --squash -m
+co = checkout
+cp = cherry-pick
+# Commit with intent to rebase with autosquash
+cs = commit --squash
+dt = difftool
+# diff staged changes against HEAD (or given ref)
+dc = diff --cached
+dsf = "diff --color"
+# Add staged files to the previous commit without changing the message
+forgot = commit --amend --no-edit
+# show commit history as a graph
+graph = log --graph --oneline --decorate --date=relative --all
+# reset to a clean working directory and index (changes discarded)
+hard = reset --hard
+# show the last commit from the log
+last = log -1 HEAD
+# list aliases
+la = "!git config -l | grep alias | cut -c 7-"
+ls = log --pretty=list --date=short --no-merges
+mt = mergetool
+p = push
+# generate output for a patch
+patch = !git --no-pager diff --no-color
+pr = pull --rebase
+pf = push --force-with-lease
+po = remote prune origin
+pt = push --tags
+# add remote origin tracking branch master
+raom = remote add origin main
+recent = ls -n 10
+rename = branch -m
+ri = rebase --interactive
+rs = reset
+rt = remote -v
+sa = stash apply
+# adds all changes including untracked files and creates a commit
+save = "!git add -A && git commit -m 'WIP'"
+sl = stash list
+ss = stash save
+ssu = stash save -u
+# show succinct status
+st = status -s
+# resets the previous commit, but keeps all the changes from that commit in the working directory
+undo = reset HEAD~1 --mixed
+# removes a file or files from the index (unstages it)
+unstage = reset HEAD --
+unwip = "!git reset --soft HEAD~1 && git unstage"
+viz = !gitup
+# commits only tracked changes with the WIP message
+wip = commit -am 'WIP'
 
 [commit]
 
-  verbose = true
-  gpgsign = true
+verbose = true
+gpgsign = true
 
 [core]
 
-  autocrlf = input
-  editor = code --wait
+autocrlf = input
+editor = code --wait
 
-  # Use custom `.gitignore`, `.gitattributes` and hooks
-  attributesfile = ~/.config/git/attributes
-  excludesfile = ~/.config/git/ignore
-  hooksPath = ~/.config/git/hooks
+# Use custom `.gitignore`, `.gitattributes` and hooks
+attributesfile = ~/.config/git/attributes
+excludesfile = ~/.config/git/ignore
+hooksPath = ~/.config/git/hooks
 
-  # pager = "diff-so-fancy | less --tabs=4 -RFXS"
-  pager = delta
+# pager = "diff-so-fancy | less --tabs=4 -RFXS"
+pager = delta
 
-  # Treat spaces before tabs and all kinds of trailing whitespace as an error
-  # [default] trailing-space: looks for spaces at the end of a line
-  # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
-  whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+# Treat spaces before tabs and all kinds of trailing whitespace as an error
+# [default] trailing-space: looks for spaces at the end of a line
+# [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 
-  # Make `git rebase` safer on macOS
-  # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
-  trustctime = false
+# Make `git rebase` safer on macOS
+# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+trustctime = false
 
-  # Prevent showing files whose names contain non-ASCII symbols as unversioned.
-  # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
-  precomposeunicode = false
+# Prevent showing files whose names contain non-ASCII symbols as unversioned.
+# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
+precomposeunicode = false
 
 [color]
 
-  # Use colors in Git commands that are capable of colored output when
-  # outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
-  ui = auto
+# Use colors in Git commands that are capable of colored output when
+# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+ui = auto
 
 [color "branch"]
 
-  current = yellow reverse
-  local = yellow
-  remote = green
+current = yellow reverse
+local = yellow
+remote = green
 
 [color "diff"]
 
-  meta = "11"
-  frag = "magenta bold"
-  func = "146 bold"
-  commit = "yellow bold"
-  old = "red bold"
-  new = "green bold"
-  whitespace = "red reverse"
+meta = "11"
+frag = "magenta bold"
+func = "146 bold"
+commit = "yellow bold"
+old = "red bold"
+new = "green bold"
+whitespace = "red reverse"
 
 [color "diff-highlight"]
 
-  oldNormal = "red bold"
-  oldHighlight = "red bold 52"
-  newNormal = "green bold"
-  newHighlight = "green bold 22"
+oldNormal = "red bold"
+oldHighlight = "red bold 52"
+newNormal = "green bold"
+newHighlight = "green bold 22"
 
 [color "status"]
 
-  added = yellow
-  changed = green
-  untracked = cyan
+added = yellow
+changed = green
+untracked = cyan
 
 [credential]
 
-  helper = osxkeychain
+helper = osxkeychain
 
 [delta]
 
-  side-by-side = true
-  syntax-theme = gruvbox-light
+paging = always
+features = gruvbox
+
+[delta "gruvbox"]
+
+dark = true
+file-added-label = "[A]"
+file-copied-label = "[C]"
+file-decoration-style = yellow bold ul
+file-modified-label = "[M]"
+file-removed-label = "[D]"
+file-renamed-label = "[R]"
+file-style = yellow bold
+hunk-header-style = file line-number syntax
+hunk-header-file-style = white
+hunk-header-decoration-style = white box
+hunk-header-line-number-style = white
+hyperlinks = true
+hyperlinks-file-link-format = "vscode://file/{path}:{line}"
+line-numbers = true
+line-numbers-left-style = grey
+line-numbers-right-style = grey
+line-numbers-minus-style = white
+line-numbers-plus-style = white
+line-numbers-left-format = " {nm:>4} │"
+line-numbers-right-format = " {np:>4} │"
+side-by-side = true
+syntax-theme = gruvbox-dark
+zero-style = syntax
 
 [delta "interactive"]
 
-  keep-plus-minus-markers = false
+keep-plus-minus-markers = false
 
 [diff]
 
-  tool = vscode
-  # Detect copies as well as renames
-  renames = copies
+tool = vscode
+# Detect copies as well as renames
+renames = copies
 
 [difftool]
 
-  prompt = false
+prompt = false
 
 [difftool "ksdiff"]
 
-  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 
 [difftool "vscode"]
 
-  cmd = code --wait --reuse-window --diff $LOCAL $REMOTE
+cmd = code --wait --reuse-window --diff $LOCAL $REMOTE
 
 [format]
 
-  pretty = list
+pretty = list
 
 [filter "media"]
 
-  required = true
-  clean = git media clean %f
-  smudge = git media smudge %f
+required = true
+clean = git media clean %f
+smudge = git media smudge %f
 
 [filter "lfs"]
 
-  clean = git lfs clean %f
-  smudge = git lfs smudge %f
-  required = true
+clean = git lfs clean %f
+smudge = git lfs smudge %f
+required = true
 
 [gpg]
 
-  format = ssh
+format = ssh
 
 [gpg "ssh"]
 
-  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 
 [help]
 
-  # Automatically correct and execute mistyped commands
-  autocorrect = 1
+# Automatically correct and execute mistyped commands
+autocorrect = 1
 
 [include]
 
-  path = ~/.gitconfig.local
+path = ~/.gitconfig.local
 
 [init]
 
-  templateDir = ~/.config/git/templates
-	defaultBranch = main
+templateDir = ~/.config/git/templates
+defaultBranch = main
 
 [interactive]
 
-  # diffFilter = "diff-so-fancy --patch"
-  diffFilter = delta --color-only --features=interactive
+# diffFilter = "diff-so-fancy --patch"
+diffFilter = delta --color-only --features=interactive
 
 [merge]
 
-  tool = vscode
+tool = vscode
 
 [mergetool]
 
-  prompt = false
+prompt = false
 
 [mergetool "ksdiff"]
 
-  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-  trustexitcode = true
+cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+trustexitcode = true
 
 [mergetool "vscode"]
 
-  cmd = code --wait --reuse-window $MERGED
+cmd = code --wait --reuse-window $MERGED
 
 [pager]
 
-  # diff = "diff-so-fancy | less --tabs=4 -RFXS --pattern '^(Date|added|deleted|modified): '"
+# diff = "diff-so-fancy | less --tabs=4 -RFXS --pattern '^(Date|added|deleted|modified): '"
 
 [pretty]
 
-  list = "%C(yellow)%h %C(blue)%ad %C(cyan)%<(20,trunc)%an %C(white)%s%C(red)%d"
+list = "%C(yellow)%h %C(blue)%ad %C(cyan)%<(20,trunc)%an %C(white)%s%C(red)%d"
 
 [pull]
 
-	rebase = true
+rebase = true
 
 [push]
 
-  default = current
-  # Make `git push` push relevant annotated tags when pushing branches out.
-  followTags = true
+default = current
+# Make `git push` push relevant annotated tags when pushing branches out.
+followTags = true
 
 [rebase]
 
-  autosquash = true
+autosquash = true
 
 [user]
 
-  name = Dave Nuñez
+name = Dave Nuñez
