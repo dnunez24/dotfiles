@@ -11,11 +11,11 @@ tap 'thoughtbot/formulae'
 brew 'awscli'
 brew 'bash'
 brew 'bats'
-brew 'diff-so-fancy'
 brew 'direnv'
-brew 'fish'
 brew 'fpp'
+brew 'gh' # GitHub CLI
 brew 'git'
+brew 'git-delta' # pager for better diffs
 brew 'git-open'
 brew 'gpg'
 brew 'httpie'
@@ -31,6 +31,8 @@ brew 'svn'
 brew 'terminal-notifier'
 brew "wget"
 brew 'vim'
+brew 'volta'
+brew 'zsh'
 
 # Install packages from casks
 cask_args appdir: '/Applications'
@@ -69,7 +71,6 @@ cask 'visual-studio-code'
 
 # Install App Store apps
 mas 'Keynote', id: 409183694
-mas "LastPass", id: 926036361
 mas 'Magnet', id: 441258766
 mas 'Numbers', id: 409203825
 mas 'Pages', id: 409201541
