@@ -50,7 +50,6 @@
   "editor.minimap.enabled": false,
   "terminal.external.osxExec": "Warp.app",
   "terminal.explorerKind": "external",
-  "workbench.activityBar.visible": false,
   "dotfiles.repository": "dnunez24/dotfiles",
   "dotfiles.targetPath": "~/.dotfiles",
   "terminal.integrated.fontFamily": "'FiraCode Nerd Font'",
@@ -60,5 +59,17 @@
   "githubPullRequests.pullBranch": "never",
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
-  }
+  },
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": false,
+    "scminput": false,
+    "yaml": true
+  },
+  "gitlens.autolinks": [],
+  "diffEditor.diffAlgorithm": "advanced",
+  "tailwindCSS.emmetCompletions": true,
+  "workbench.sideBar.location": "right",
+  "security.workspace.trust.untrustedFiles": "open"
 }
