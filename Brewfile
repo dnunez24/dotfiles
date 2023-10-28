@@ -20,6 +20,7 @@ brew 'git-open'
 brew 'gpg'
 brew 'httpie'
 brew 'jq'
+brew 'less' # Install more recent version of less pager
 brew 'mas'
 brew 'node'
 brew 'openssh'
