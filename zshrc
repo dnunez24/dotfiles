@@ -133,6 +133,7 @@ plugins=(
   git
   gh
   npm
+  volta
   vscode
 )
 
@@ -163,6 +164,10 @@ export EDITOR="code -w"
 export AWS_PROFILE="iamr-dotcom-snkrs-team"
 
 export PIPENV_VENV_IN_PROJECT=1
+
+# Configure Volta (https://volta.sh) for Node.js version management
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
