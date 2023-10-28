@@ -146,7 +146,6 @@
 [delta]
 
   side-by-side = true
-  line-numbers = true
   syntax-theme = gruvbox-light
 
 [delta "interactive"]
