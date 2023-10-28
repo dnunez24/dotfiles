@@ -1,0 +1,10 @@
+# ripgrep configuration file
+# https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md#configuration-file
+
+# Always display 3 lines before and after results
+--context=3
+
+# Create file type aliases for convenient searching
+--type-add=web:*.html
+--type-add=web:*.{css,less,sass,styl}
+--type-add=web:*.{js,jsx,ts,tsx}

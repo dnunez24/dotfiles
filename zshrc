@@ -169,6 +169,12 @@ export PIPENV_VENV_IN_PROJECT=1
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
+# Configuration for delta pager (https://github.com/dandavison/delta)
+export DELTA_PAGER="less"
+
+# Set ripgrep config file path
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -176,10 +182,14 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
+
 alias zshrc="code -w $HOME/.zshrc"
 alias la="ls -Alp"
+
+# Alias to find files using ripgrep and paginate / syntax highlight using delta
+search() {
+  rg --json -C 3 $@ | delta
+}
 
 # Autoload all custom functions
 autoload -Uz $ZSH/functions/**/*(-.:t)
