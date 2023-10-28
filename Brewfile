@@ -15,7 +15,7 @@ brew 'direnv'
 brew 'fpp'
 brew 'gh' # GitHub CLI
 brew 'git'
-brew 'git-delta' # pager for better diffs
+brew 'git-delta' # delta pager for better diffs (https://github.com/dandavison/delta)
 brew 'git-open'
 brew 'gpg'
 brew 'httpie'
@@ -25,6 +25,7 @@ brew 'node'
 brew 'openssh'
 brew 'pinentry-mac'
 brew 'rcm'
+brew 'rg' # ripgrep for better grep searches (https://github.com/BurntSushi/ripgrep/)
 brew 'shellcheck'
 brew 'starship'
 brew 'svn'
