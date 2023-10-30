@@ -16,6 +16,7 @@
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "block",
   "eslint.lintTask.enable": true,
+  "eslint.ignoreUntitled": true,
   "git.autoStash": true,
   "dev.containers.workspaceMountConsistency": "delegated",
   "editor.codeActionsOnSave": {
@@ -80,5 +81,10 @@
   "evenBetterToml.formatter.indentString": "  ",
   "evenBetterToml.formatter.alignComments": true,
   "evenBetterToml.formatter.alignEntries": true,
-  "editorconfig.generateAuto": false
+  "editorconfig.generateAuto": false,
+  "codestream.email": "Dave.Nunez@nike.com",
+  "codestream.serverUrl": "https://codestream-us1.service.newrelic.com",
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  }
 }
