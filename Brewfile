@@ -8,34 +8,32 @@ tap 'homebrew/core'
 tap 'thoughtbot/formulae'
 
 # Install packages from Homebrew core
-brew 'adr-tools'
-brew 'awscli'
-brew 'bash'
+brew 'adr-tools' # for creating architectural decision records (ADRs)
+brew 'awscli' # AWS CLI for managing AWS resources
+brew 'bash' # use the most recent version of bash
 brew 'bats'
-brew 'direnv'
-brew 'fpp'
+brew 'direnv' # for managing .env files per directory
+brew 'fpp' # piping file arguments to more easily select files
 brew 'gh' # GitHub CLI
-brew 'git'
+brew 'git' # use the most recent version of git
 brew 'git-delta' # delta pager for better diffs (https://github.com/dandavison/delta)
 brew 'git-open'
 brew 'gpg'
-brew 'httpie'
-brew 'jq'
+brew 'httpie' # HTTP client, like an easier to use curl
+brew 'jq' # parsing and querying JSON from the command line
 brew 'less' # Install more recent version of less pager
-brew 'mas'
-brew 'node'
+brew 'mas' # Install Mac App Store apps via Homebrew
 brew 'openssh'
 brew 'pinentry-mac'
-brew 'rcm'
+brew 'rcm' # for managing dotfiles
 brew 'rg' # ripgrep for better grep searches (https://github.com/BurntSushi/ripgrep/)
 brew 'shellcheck'
-brew 'starship'
-brew 'svn'
+brew 'starship' # custom cross-shell prompt
 brew 'terminal-notifier'
 brew "wget"
-brew 'vim'
-brew 'volta'
-brew 'zsh'
+brew 'vim' # use the most recent version of vim
+brew 'volta' # for managing isolated Node.js installations per project
+brew 'zsh' # use the most recent version of zsh
 
 # Install packages from casks
 cask_args appdir: '/Applications'
