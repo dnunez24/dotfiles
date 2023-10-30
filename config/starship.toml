@@ -24,6 +24,9 @@ white         = "#d4be98"
 # bright-cyan   = ""
 # bright-white  = ""
 
+[line_break]
+disabled = true
+
 [aws]
 # disabled = true
 symbol = "  "
