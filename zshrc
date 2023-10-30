@@ -135,6 +135,7 @@ plugins=(
   npm
   volta
   vscode
+  volta
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -175,6 +176,9 @@ export DELTA_PAGER="less"
 # Set ripgrep config file path
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
+# Set the home directory for Groovy SDK
+export GROOVY_HOME=/opt/homebrew/opt/groovy/libexec
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -203,11 +207,11 @@ cmd_exists() {
 # Initialize starship shell prompt
 cmd_exists starship && eval "$(starship init zsh)"
 
-# Initialize nodenv for managing Node.js versions
-cmd_exists nodenv && eval "$(nodenv init -)"
-
 # Initialize pyenv for managing Python versions
 cmd_exists pyenv && eval "$(pyenv init -)"
 
 # Initialize direnv for loading .envrc / .env files
 cmd_exists direnv && eval "$(direnv hook zsh)"
+
+# Warpify zsh subshells without requiring confirmation
+printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh"}}\x9c'
