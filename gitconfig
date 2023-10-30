@@ -239,6 +239,9 @@ defaultBranch = main
 
 diffFilter = delta --color-only --features=interactive
 
+[interactive]
+  diffFilter = "diff-so-fancy --patch"
+
 [merge]
 
 tool = vscode
