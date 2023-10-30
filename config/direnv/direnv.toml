@@ -2,4 +2,4 @@
 load_dotenv = true
 
 [whitelist]
-exact = ["$HOME/.env"]
+exact = ["$HOME/.envrc"]
