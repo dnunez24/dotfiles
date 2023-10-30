@@ -1,15 +1,63 @@
 # shellcheck shell=bash
 
-cmd=
+LAUNCH_DAEMONS_DIR="/Library/LaunchDaemons"
+LAUNCH_AGENTS_DIR="/Library/LaunchAgents"
+
+ZSCALER_TUNNEL="com.zscaler.tunnel"
+ZSCALER_TUNNEL_SERVICE_TARGET="system/${ZSCALER_TUNNEL}"
+ZSCALER_TUNNEL_PLIST="$LAUNCH_DAEMONS_DIR/com.zscaler.tunnel.plist"
+
+ZSCALER_SERVICE="com.zscaler.service"
+ZSCALER_SERVICE_SERVICE_TARGET="system/${ZSCALER_SERVICE}"
+ZSCALER_SERVICE_PLIST="$LAUNCH_DAEMONS_DIR/com.zscaler.service.plist"
+
+ZSCALER_TRAY="com.zscaler.tray"
+ZSCALER_TRAY_SERVICE_TARGET="gui/$(id -u)/${ZSCALER_TRAY}"
+ZSCALER_TRAY_PLIST="$LAUNCH_AGENTS_DIR/com.zscaler.tray.plist"
+
+is_running() {
+  sudo launchctl list | grep "$1" >/dev/null 2>&1
+}
+
+run() {
+  sudo launchctl "$@"
+}
+
+status() {
+  run list | grep zscaler
+}
+
+enable() {
+  ! is_running $ZSCALER_TUNNEL && run bootstrap system $ZSCALER_TUNNEL_PLIST --angel
+  # run bootstrap system $ZSCALER_SERVICE_PLIST --angel
+  # run bootstrap "gui/$(id -u)" $ZSCALER_TRAY_PLIST
+
+  run enable system/com.zscaler.tunnel
+  run enable system/com.zscaler.service
+  run enable "gui/$(id -u)/com.zscaler.tray"
+}
+
+disable() {
+  # Tunnel is the only one that needs to be booted out
+  is_running $ZSCALER_TUNNEL && run bootout $ZSCALER_TUNNEL_SERVICE_TARGET
+
+  # run stop system "$LAUNCH_DAEMONS_DIR/com.zscaler.tunnel.plist"
+  # run stop system "$LAUNCH_DAEMONS_DIR/com.zscaler.service.plist"
+  # run stop "gui/$(id -u)" "$LAUNCH_AGENTS_DIR/com.zscaler.tray.plist"
+
+  # run disable system/com.zscaler.tunnel
+  # run disable system/com.zscaler.service
+  # run disable "gui/$(id -u)/com.zscaler.tray"
+}
+
+usage() {
+  echo "error: unknown argument '$1'"
+  return 1
+}
 
 case "$1" in
-  enable) cmd="load";;
-  disable) cmd="unload";;
-  *)
-    echo "error: unknown argument '$1'"
-    return 1
-    ;;
+status) status ;;
+enable) enable ;;
+disable) disable ;;
+*) usage "$@" ;;
 esac
-
-sudo launchctl $cmd /Library/LaunchDaemons/com.zscaler.tunnel.plist
-sudo launchctl $cmd /Library/LaunchAgents/com.zscaler.tray.plist
