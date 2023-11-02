@@ -192,7 +192,7 @@ alias la="ls -Alp"
 
 # Alias to find files using ripgrep and paginate / syntax highlight using delta
 search() {
-  rg --json -C 3 $@ | delta
+  rg "${@:1}" --json -C 3 | delta
 }
 
 # Autoload all custom functions
