@@ -73,6 +73,10 @@ viz = !gitup
 # commits only tracked changes with the WIP message
 wip = commit -am 'WIP'
 
+[branch]
+
+autoSetupMerge = true
+
 [commit]
 
 verbose = true
@@ -265,13 +269,15 @@ list = "%C(yellow)%h %C(blue)%ad %C(cyan)%<(20,trunc)%an %C(white)%s%C(red)%d"
 
 [pull]
 
-rebase = true
+rebase = interactive
 
 [push]
 
-default = current
+default = simple
 # Make `git push` push relevant annotated tags when pushing branches out.
 followTags = true
+# Automatically set local branches to track remote with same name when pushed
+autoSetupRemote = true
 
 [rebase]
 
