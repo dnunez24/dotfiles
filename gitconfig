@@ -62,6 +62,9 @@ save = "!git add -A && git commit -m 'WIP'"
 sl = stash list
 ss = stash save
 ssu = stash save -u
+# Squash all commits on the current branch since the common ancestor commit on
+# origin/HEAD
+sqa = "!git reset --soft origin/HEAD && git commit"
 # show succinct status
 st = status -s
 # resets the previous commit, but keeps all the changes from that commit in the working directory
