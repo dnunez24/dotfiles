@@ -51,3 +51,13 @@ This will create the file in the dotfiles directory and then symlink it to the u
 I use [direnv](https://github.com/direnv/direnv) to dynamically load environment variables from .envrc or .env files in the current directory. These files must be explicitly allowed to prevent automatically running a script from an untrusted directory that could do nefarious things to my system. You can run `direnv allow [file]` to allow a file or add them to the `config/direnv/direnv.toml` config file in this repo.
 
 Some secrets may need to be stored in environment variables to be loaded by the shell. You can add these to a file in `~/.env` which is not included here for reasons which should be obvious. 
+
+## Application Settings
+
+### Visual Studio Code
+
+Settings Sync is enabled via my GitHub profile and will sync across multiple computers. These files are also checked into version control in this repo for backup.
+
+### Warp Terminal
+
+Configured through files in the `warp` directory in this repo.
