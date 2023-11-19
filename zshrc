@@ -161,9 +161,6 @@ export LC_CTYPE="en_US.UTF-8"
 # Set default editor to VS Code
 export EDITOR="code -w"
 
-# TODO: add to a tag specific config or load from .env
-export AWS_PROFILE="iamr-dotcom-snkrs-team"
-
 export PIPENV_VENV_IN_PROJECT=1
 
 # Configure Volta (https://volta.sh) for Node.js version management
