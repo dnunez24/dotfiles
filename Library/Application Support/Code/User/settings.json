@@ -4,9 +4,6 @@
   },
   "[dart]": {
     "editor.formatOnSave": true,
-    "editor.rulers": [
-      80
-    ],
     "editor.selectionHighlight": false,
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggestSelection": "first",
@@ -15,6 +12,9 @@
   },
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[markdown]": {
+    "editor.wordWrap": "off"
   },
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
@@ -40,6 +40,9 @@
   "editor.formatOnSave": true,
   "editor.inlineSuggest.enabled": true,
   "editor.minimap.enabled": false,
+  "editor.rulers": [
+    80
+  ],
   "editor.snippetSuggestions": "top",
   "editor.suggestSelection": "first",
   "editor.tabCompletion": "onlySnippets",
@@ -60,11 +63,11 @@
   "git.autofetch": true,
   "git.autoStash": true,
   "github.copilot.enable": {
-    "*": true,
+    "*": false,
     "markdown": false,
     "plaintext": true,
     "scminput": false,
-    "yaml": true
+    "yaml": false
   },
   "github.username": "dnunez24",
   "githubPullRequests.pullBranch": "never",
@@ -103,5 +106,34 @@
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "workbench.colorTheme": "Gruvbox Material Dark",
   "workbench.sideBar.location": "right",
+  "yaml.customTags": [
+    "!And",
+    "!And sequence",
+    "!If",
+    "!If sequence",
+    "!Not",
+    "!Not sequence",
+    "!Equals",
+    "!Equals sequence",
+    "!Or",
+    "!Or sequence",
+    "!FindInMap",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Join",
+    "!Join sequence",
+    "!Cidr",
+    "!Ref",
+    "!Sub",
+    "!Sub sequence",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!ImportValue sequence",
+    "!Select",
+    "!Select sequence",
+    "!Split",
+    "!Split sequence"
+  ],
   "zenMode.hideStatusBar": false
 }
