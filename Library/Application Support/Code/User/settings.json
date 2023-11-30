@@ -105,7 +105,6 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "workbench.colorTheme": "Gruvbox Material Dark",
-  "workbench.sideBar.location": "right",
   "yaml.customTags": [
     "!And",
     "!And sequence",
