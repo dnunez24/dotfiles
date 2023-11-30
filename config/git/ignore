@@ -38,3 +38,7 @@ Temporary Items
 *.sass-cache
 *.sw?
 *.vi
+
+# Always ignore .env type files
+.env
+.envrc
