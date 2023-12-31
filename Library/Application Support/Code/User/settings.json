@@ -8,7 +8,7 @@
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "onlySnippets",
-    "editor.wordBasedSuggestions": false
+    "editor.wordBasedSuggestions": "off"
   },
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
@@ -29,8 +29,8 @@
   "dotfiles.repository": "dnunez24/dotfiles",
   "dotfiles.targetPath": "~/.dotfiles",
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.organizeImports": true
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "'FiraCode Nerd Font', 'Source Code Pro', Menlo, Monaco, 'Courier New', monospace",
@@ -134,5 +134,8 @@
     "!Split",
     "!Split sequence"
   ],
-  "zenMode.hideStatusBar": false
+  "zenMode.hideStatusBar": false,
+  "dart.sdkPaths": [
+    "/usr/local/bin"
+  ]
 }
