@@ -24,6 +24,9 @@
   "cmake.configureOnOpen": true,
   "codestream.email": "Dave.Nunez@nike.com",
   "codestream.serverUrl": "https://codestream-us1.service.newrelic.com",
+  "dart.sdkPaths": [
+    "/usr/local/bin"
+  ],
   "dev.containers.workspaceMountConsistency": "delegated",
   "diffEditor.diffAlgorithm": "advanced",
   "dotfiles.repository": "dnunez24/dotfiles",
@@ -92,6 +95,7 @@
     "~/.local/share/virtualenvs"
   ],
   "redhat.telemetry.enabled": false,
+  "security.promptForLocalFileProtocolHandling": false,
   "security.workspace.trust.untrustedFiles": "open",
   "tailwindCSS.emmetCompletions": true,
   "terminal.explorerKind": "external",
@@ -134,8 +138,5 @@
     "!Split",
     "!Split sequence"
   ],
-  "zenMode.hideStatusBar": false,
-  "dart.sdkPaths": [
-    "/usr/local/bin"
-  ]
+  "zenMode.hideStatusBar": false
 }
