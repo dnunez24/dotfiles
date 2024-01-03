@@ -22,14 +22,18 @@
 #            - exec: code .
 
 ---
-name: Snkrs Dev
+name: SNKRS Development
 windows:
   - tabs:
       - title: monorepo
         layout:
           cwd: /Users/DNun14/projects/dotcom.snkrs-monorepo
+          commands:
+            - exec: code .
         color: yellow
       - title: dotfiles
         layout:
           cwd: /Users/DNun14/.dotfiles
+          commands:
+            - exec: code .
         color: green
