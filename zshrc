@@ -185,7 +185,7 @@ export GROOVY_HOME=/opt/homebrew/opt/groovy/libexec
 # For a full list of active aliases, run `alias`.
 
 alias zshrc="code -w $HOME/.zshrc"
-alias la="ls -Alp"
+alias la="ls -Alph"
 
 # Alias to find files using ripgrep and paginate / syntax highlight using delta
 search() {
@@ -212,3 +212,19 @@ cmd_exists direnv && eval "$(direnv hook zsh)"
 
 # Warpify zsh subshells without requiring confirmation
 printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh"}}\x9c'
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/dnunez/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/dnunez/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/dnunez/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/dnunez/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
