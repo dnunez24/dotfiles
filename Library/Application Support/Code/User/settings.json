@@ -65,8 +65,9 @@
   "files.autoSave": "onWindowChange",
   "git.autofetch": true,
   "git.autoStash": true,
+  "github.copilot.advanced": {},
   "github.copilot.enable": {
-    "*": false,
+    "*": true,
     "markdown": false,
     "plaintext": true,
     "scminput": false,
@@ -106,7 +107,10 @@
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.fontFamily": "'FiraCode Nerd Font'",
   "terminal.integrated.fontSize": 16,
+  "terminal.integrated.inheritEnv": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "vscode-edge-devtools.browserFlavor": "Default",
+  "vscode-edge-devtools.webhint": false,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "workbench.colorTheme": "Gruvbox Material Dark",
   "yaml.customTags": [
