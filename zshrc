@@ -136,6 +136,7 @@ plugins=(
   volta
   vscode
   volta
+  yarn
 )
 
 source $ZSH/oh-my-zsh.sh

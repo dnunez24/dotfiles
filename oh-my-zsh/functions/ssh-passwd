@@ -6,7 +6,12 @@
 # Useful for bulk updating your key passwords to be in sync with your
 # OS password when changes are required by password policies, etc.
 
-for key in ~/.ssh/id_*.pub; do
-  echo "Update password for $key"
+if [ -f "${1}" ]; then
+  key="${1}"
   ssh-keygen -p -f "${key%.pub}"
-done
+else 
+  for key in ~/.ssh/id_*.pub; do
+    echo "Update password for $key"
+    ssh-keygen -p -f "${key%.pub}"
+  done
+fi

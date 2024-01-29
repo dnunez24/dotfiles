@@ -32,8 +32,7 @@
   "dotfiles.repository": "dnunez24/dotfiles",
   "dotfiles.targetPath": "~/.dotfiles",
   "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit",
-    "source.organizeImports": "explicit"
+    "source.fixAll": "explicit"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "'FiraCode Nerd Font', 'Source Code Pro', Menlo, Monaco, 'Courier New', monospace",
