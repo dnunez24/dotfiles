@@ -1,4 +1,6 @@
 {
+  "C_Cpp.clang_format_fallbackStyle": "Chromium",
+  "C_Cpp.clang_format_path": "/usr/local/bin/clang-format",
   "[cpp]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
   },
@@ -14,13 +16,12 @@
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
   "[markdown]": {
-    "editor.wordWrap": "off"
+    "editor.wordWrap": "bounded"
   },
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "C_Cpp.clang_format_fallbackStyle": "Chromium",
-  "C_Cpp.clang_format_path": "/usr/local/bin/clang-format",
+  "chat.editor.fontSize": 16,
   "cmake.configureOnOpen": true,
   "codestream.email": "Dave.Nunez@nike.com",
   "codestream.serverUrl": "https://codestream-us1.service.newrelic.com",
@@ -42,10 +43,13 @@
   "editor.formatOnSave": true,
   "editor.inlineSuggest.enabled": true,
   "editor.minimap.enabled": false,
+  "editor.pasteAs.preferences": [
+    "text.updateImports"
+  ],
   "editor.rulers": [
     80
   ],
-  "editor.snippetSuggestions": "top",
+  "editor.snippetSuggestions": "inline",
   "editor.suggestSelection": "first",
   "editor.tabCompletion": "onlySnippets",
   "editor.tabSize": 2,
@@ -62,8 +66,10 @@
   "evenBetterToml.formatter.reorderKeys": true,
   "evenBetterToml.formatter.trailingNewline": true,
   "files.autoSave": "onWindowChange",
-  "git.autofetch": true,
   "git.autoStash": true,
+  "git.autofetch": true,
+  "git.blame.editorDecoration.enabled": true,
+  "git.blame.statusBarItem.enabled": true,
   "github.copilot.advanced": {},
   "github.copilot.enable": {
     "*": true,
@@ -86,6 +92,8 @@
   "javascript.suggest.completeFunctionCalls": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "markdown.editor.pasteUrlAsFormattedLink.enabled": "smart",
+  "markdown.occurrencesHighlight.enabled": true,
+  "markdown.validate.enabled": true,
   "php.executablePath": "/usr/local/bin/php",
   "prettier.requireConfig": true,
   "prettier.useEditorConfig": false,
